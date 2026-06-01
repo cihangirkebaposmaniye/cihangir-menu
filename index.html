@@ -3,226 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cihangir Menü</title>
+<title>Cihangir Kebap Menü</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-    background:#050505;
-    color:white;
-    padding:20px;
+    background:
+    radial-gradient(circle at top,#2b1606 0%,#070707 45%,#000 100%);
+    color:#fff;
+    padding:18px;
+    font-family:'Inter',Arial,sans-serif;
 }
 
-.container{
-    max-width:1100px;
+.menu{
+    max-width:1150px;
     margin:auto;
-    border:2px solid #c78b18;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(to bottom,#0b0b0b,#141414);
-    box-shadow:0 0 30px rgba(199,139,24,0.2);
+    padding:34px;
+    border-radius:28px;
+    background:linear-gradient(180deg,#111,#050505);
+    border:1px solid rgba(212,157,57,.55);
+    box-shadow:0 0 50px rgba(0,0,0,.8), inset 0 0 35px rgba(212,157,57,.05);
 }
 
 .header{
     text-align:center;
-    margin-bottom:35px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    padding-bottom:20px;
+    padding:20px 10px 34px;
+    border-bottom:1px solid rgba(212,157,57,.35);
+    margin-bottom:28px;
 }
 
 .logo{
-    font-size:78px;
-    color:#d89a1d;
-    font-weight:bold;
-    font-family:cursive;
-}
-
-.slogan{
-    letter-spacing:4px;
-    color:#ddd;
-    margin-top:5px;
-    font-size:20px;
-}
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.box{
-    border:1px solid #c78b18;
-    border-radius:15px;
-    overflow:hidden;
-    background:#0e0e0e;
-}
-
-.box-title{
-    background:#5f0a0a;
-    color:white;
-    padding:14px 20px;
-    font-size:28px;
-    font-weight:bold;
+    font-family:'Playfair Display',serif;
+    font-size:86px;
+    font-weight:800;
+    color:#d9a441;
+    text-shadow:0 4px 18px rgba(217,164,65,.25);
     letter-spacing:1px;
 }
 
-.item{
-    display:flex;
-    justify-content:space-between;
-    padding:14px 20px;
-    border-bottom:1px dashed rgba(255,255,255,0.08);
-    font-size:24px;
+.slogan{
+    margin-top:6px;
+    font-size:17px;
+    letter-spacing:5px;
+    color:#f3e0b6;
+    font-weight:700;
 }
 
-.item:last-child{
-    border-bottom:none;
+.badge{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 22px;
+    border:1px solid rgba(217,164,65,.55);
+    border-radius:999px;
+    color:#d9a441;
+    font-weight:800;
+    letter-spacing:1px;
+    background:rgba(217,164,65,.08);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.card{
+    background:linear-gradient(180deg,#141414,#090909);
+    border:1px solid rgba(217,164,65,.42);
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 16px 35px rgba(0,0,0,.45);
+}
+
+.card h2{
+    background:linear-gradient(90deg,#6f0d0d,#a01812);
+    color:#fff;
+    padding:16px 22px;
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:15px;
+    align-items:center;
+    padding:15px 22px;
+    border-bottom:1px dashed rgba(255,255,255,.13);
+    font-size:21px;
+}
+
+.row:last-child{border-bottom:none}
+
+.row span:first-child{
+    color:#f7f1e8;
+    font-weight:600;
 }
 
 .price{
-    color:#d89a1d;
-    font-weight:bold;
+    color:#d9a441;
+    font-weight:900;
+    font-size:22px;
+    white-space:nowrap;
 }
 
 .special{
-    margin-top:25px;
-    border:2px solid #c78b18;
-    border-radius:15px;
-    padding:25px;
+    margin-top:28px;
+    padding:30px;
+    border-radius:24px;
     text-align:center;
-    background:#111;
+    background:
+    linear-gradient(135deg,rgba(111,13,13,.8),rgba(20,20,20,.95)),
+    linear-gradient(180deg,#111,#050505);
+    border:1px solid rgba(217,164,65,.65);
+    box-shadow:0 18px 45px rgba(0,0,0,.5);
 }
 
-.special-title{
+.special h2{
     font-size:34px;
-    color:#d89a1d;
-    margin-bottom:10px;
-    font-weight:bold;
+    color:#d9a441;
+    margin-bottom:12px;
 }
 
-.special-text{
+.special p{
     font-size:24px;
     line-height:1.6;
+    font-weight:700;
+}
+
+.special .big{
+    display:block;
+    margin-top:14px;
+    font-size:48px;
+    color:#fff;
+    font-weight:900;
 }
 
 .footer{
+    margin-top:30px;
     text-align:center;
-    margin-top:35px;
-    color:#d89a1d;
-    font-size:28px;
+    color:#d9a441;
+    font-size:22px;
     letter-spacing:3px;
+    font-weight:800;
+    padding-top:24px;
+    border-top:1px solid rgba(217,164,65,.28);
 }
 
-@media(max-width:900px){
-
-.menu-grid{
-    grid-template-columns:1fr;
-}
-
-.logo{
-    font-size:58px;
-}
-
-.item{
-    font-size:20px;
-}
-
-.box-title{
-    font-size:24px;
-}
+@media(max-width:850px){
+    body{padding:10px}
+    .menu{padding:18px;border-radius:18px}
+    .logo{font-size:58px}
+    .slogan{font-size:12px;letter-spacing:3px}
+    .grid{grid-template-columns:1fr;gap:18px}
+    .card h2{font-size:22px}
+    .row{font-size:18px;padding:13px 16px}
+    .price{font-size:19px}
+    .special h2{font-size:26px}
+    .special p{font-size:19px}
+    .special .big{font-size:38px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="menu">
 
 <div class="header">
-<div class="logo">Cihangir</div>
-<div class="slogan">GERÇEK ADANA LEZZETİ</div>
+    <div class="logo">Cihangir</div>
+    <div class="slogan">GERÇEK ADANA LEZZETİ</div>
+    <div class="badge">KUZU ETİ • TAŞ FIRIN • MANGAL</div>
 </div>
 
-<div class="menu-grid">
+<div class="grid">
 
-<div class="box">
-<div class="box-title">IZGARA KEBAP</div>
-
-<div class="item"><span>Adana Kebap</span><span class="price">₺390</span></div>
-<div class="item"><span>Kuşbaşı</span><span class="price">₺440</span></div>
-<div class="item"><span>Ciğer</span><span class="price">₺470</span></div>
-<div class="item"><span>Tavuk Şiş</span><span class="price">₺420</span></div>
-<div class="item"><span>Kanat</span><span class="price">₺420</span></div>
-<div class="item"><span>Pirzola</span><span class="price">₺600</span></div>
-<div class="item"><span>Beyti</span><span class="price">₺600</span></div>
-<div class="item"><span>Sarma Beyti</span><span class="price">₺600</span></div>
-<div class="item"><span>Külbastı</span><span class="price">₺600</span></div>
-<div class="item"><span>Kazbaşı</span><span class="price">₺600</span></div>
-<div class="item"><span>Yağlı Kara</span><span class="price">₺600</span></div>
-
+<div class="card">
+<h2>IZGARA KEBAP</h2>
+<div class="row"><span>Kuzu Adana Kebap</span><span class="price">₺390</span></div>
+<div class="row"><span>Kuzu Kuşbaşı</span><span class="price">₺440</span></div>
+<div class="row"><span>Ciğer</span><span class="price">₺470</span></div>
+<div class="row"><span>Tavuk Şiş</span><span class="price">₺420</span></div>
+<div class="row"><span>Kanat</span><span class="price">₺420</span></div>
+<div class="row"><span>Pirzola</span><span class="price">₺600</span></div>
+<div class="row"><span>Beyti</span><span class="price">₺600</span></div>
+<div class="row"><span>Sarma Beyti</span><span class="price">₺600</span></div>
+<div class="row"><span>Külbastı</span><span class="price">₺600</span></div>
+<div class="row"><span>Kazbaşı</span><span class="price">₺600</span></div>
+<div class="row"><span>Yağlı Kara</span><span class="price">₺600</span></div>
 </div>
 
-<div class="box">
-<div class="box-title">KİLOLUK ÜRÜNLER</div>
-
-<div class="item"><span>Adana</span><span class="price">₺1.800</span></div>
-<div class="item"><span>Kuşbaşı</span><span class="price">₺2.000</span></div>
-<div class="item"><span>Tavuk</span><span class="price">₺950</span></div>
-<div class="item"><span>Pirzola</span><span class="price">₺2.000</span></div>
-<div class="item"><span>Ciğer</span><span class="price">₺2.000</span></div>
-<div class="item"><span>Kaburga</span><span class="price">₺2.000</span></div>
-<div class="item"><span>Kanat</span><span class="price">₺950</span></div>
-<div class="item"><span>Adana Lahmacun (50 Adet)</span><span class="price">₺1.650</span></div>
-
+<div class="card">
+<h2>KİLOLUK ÜRÜNLER</h2>
+<div class="row"><span>Kuzu Adana</span><span class="price">₺1.800</span></div>
+<div class="row"><span>Kuzu Kuşbaşı</span><span class="price">₺2.000</span></div>
+<div class="row"><span>Tavuk</span><span class="price">₺950</span></div>
+<div class="row"><span>Pirzola</span><span class="price">₺2.000</span></div>
+<div class="row"><span>Ciğer</span><span class="price">₺2.000</span></div>
+<div class="row"><span>Kaburga</span><span class="price">₺2.000</span></div>
+<div class="row"><span>Kanat</span><span class="price">₺950</span></div>
+<div class="row"><span>Adana Lahmacun 50 Adet</span><span class="price">₺1.650</span></div>
 </div>
 
-<div class="box">
-<div class="box-title">YARIM KİLOLUK ÜRÜNLER</div>
-
-<div class="item"><span>Adana</span><span class="price">₺1.000</span></div>
-<div class="item"><span>Kuşbaşı</span><span class="price">₺1.100</span></div>
-<div class="item"><span>Tavuk</span><span class="price">₺600</span></div>
-<div class="item"><span>Pirzola</span><span class="price">₺1.100</span></div>
-<div class="item"><span>Ciğer</span><span class="price">₺1.100</span></div>
-<div class="item"><span>Kaburga</span><span class="price">₺1.100</span></div>
-<div class="item"><span>Kanat</span><span class="price">₺600</span></div>
-<div class="item"><span>Adana Lahmacun (25 Adet)</span><span class="price">₺1.000</span></div>
-
+<div class="card">
+<h2>YARIM KİLOLUK ÜRÜNLER</h2>
+<div class="row"><span>Kuzu Adana</span><span class="price">₺1.000</span></div>
+<div class="row"><span>Kuzu Kuşbaşı</span><span class="price">₺1.100</span></div>
+<div class="row"><span>Tavuk</span><span class="price">₺600</span></div>
+<div class="row"><span>Pirzola</span><span class="price">₺1.100</span></div>
+<div class="row"><span>Ciğer</span><span class="price">₺1.100</span></div>
+<div class="row"><span>Kaburga</span><span class="price">₺1.100</span></div>
+<div class="row"><span>Kanat</span><span class="price">₺600</span></div>
+<div class="row"><span>Adana Lahmacun 25 Adet</span><span class="price">₺1.000</span></div>
 </div>
 
-<div class="box">
-<div class="box-title">FIRIN ÜRÜNLERİ</div>
-
-<div class="item"><span>Adana Lahmacun</span><span class="price">₺330</span></div>
-<div class="item"><span>Antep Lahmacun</span><span class="price">₺330</span></div>
-<div class="item"><span>Çıtır Lahmacun</span><span class="price">₺250</span></div>
-<div class="item"><span>Kıymalı Pide</span><span class="price">₺330</span></div>
-<div class="item"><span>Kaşarlı Pide</span><span class="price">₺330</span></div>
-<div class="item"><span>Kuşbaşılı Pide</span><span class="price">₺330</span></div>
-<div class="item"><span>Karışık Pide</span><span class="price">₺330</span></div>
-
+<div class="card">
+<h2>FIRIN ÜRÜNLERİ</h2>
+<div class="row"><span>Adana Lahmacun</span><span class="price">₺330</span></div>
+<div class="row"><span>Antep Lahmacun</span><span class="price">₺330</span></div>
+<div class="row"><span>Çıtır Lahmacun</span><span class="price">₺250</span></div>
+<div class="row"><span>Kıymalı Pide</span><span class="price">₺330</span></div>
+<div class="row"><span>Kaşarlı Pide</span><span class="price">₺330</span></div>
+<div class="row"><span>Kuşbaşılı Pide</span><span class="price">₺330</span></div>
+<div class="row"><span>Karışık Pide</span><span class="price">₺330</span></div>
 </div>
 
 </div>
 
 <div class="special">
-<div class="special-title">ÇALIŞANA ÖZEL MENÜ</div>
-
-<div class="special-text">
-Adana Kebap + Tavuk Şiş + 1 Adet Lahmacun
-<br><br>
-<span style="color:#d89a1d;font-size:40px;font-weight:bold;">₺350</span>
-</div>
+<h2>ÇALIŞANA ÖZEL MENÜ</h2>
+<p>Adana Kebap + Tavuk Şiş + 1 Adet Lahmacun</p>
+<span class="big">₺350</span>
 </div>
 
-<div class="footer">
-GERÇEK LEZZET, GERÇEK MANGALDA PİŞER 🔥
-</div>
+<div class="footer">GERÇEK LEZZET, GERÇEK MANGALDA PİŞER</div>
 
 </div>
 
