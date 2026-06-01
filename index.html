@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cihangir Kebap Menü</title>
+  <style>
+    :root{
+      --bg:#111;
+      --card:#1b1b1b;
+      --gold:#f3c312;
+      --red:#c92323;
+      --text:#fff;
+      --muted:#bdbdbd;
+      --line:#333;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#151515,#050505);
+      color:var(--text);
+    }
+    header{
+      text-align:center;
+      padding:24px 16px 12px;
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:linear-gradient(180deg,#111 80%,rgba(17,17,17,.88));
+      border-bottom:1px solid #222;
+    }
+    .logo{
+      max-width:230px;
+      width:75%;
+      background:#fff;
+      border-radius:18px;
+      padding:8px;
+      box-shadow:0 8px 30px rgba(0,0,0,.45);
+    }
+    h1{font-size:22px;margin:12px 0 4px;color:var(--gold)}
+    .sub{font-size:13px;color:var(--muted);margin:0 0 14px}
+    nav{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:4px 0 2px;
+    }
+    nav a{
+      white-space:nowrap;
+      text-decoration:none;
+      color:#111;
+      background:var(--gold);
+      padding:9px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+    }
+    main{
+      width:min(760px,100%);
+      margin:0 auto;
+      padding:16px;
+    }
+    section{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      margin:0 0 18px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
+    }
+    h2{
+      margin:0;
+      padding:14px 16px;
+      text-align:center;
+      background:linear-gradient(90deg,var(--red),#7d1111);
+      color:white;
+      font-size:17px;
+      letter-spacing:.5px;
+    }
+    .item{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:13px 15px;
+      border-top:1px solid var(--line);
+      align-items:center;
+    }
+    .name{
+      font-size:15.5px;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .price{
+      color:var(--gold);
+      font-weight:800;
+      font-size:15.5px;
+      white-space:nowrap;
+    }
+    footer{
+      text-align:center;
+      color:#888;
+      padding:24px 12px 34px;
+      font-size:12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="cihangir.png" alt="Cihangir Kebap Logo" class="logo" />
+    <h1>Cihangir Kebap Menü</h1>
+    <p class="sub">QR Menü • Restoran içi kullanım</p>
+    <nav>
+      <a href="#izgara">Izgara Kebap</a>
+      <a href="#kiloluk">Kiloluk</a>
+      <a href="#yarim">Yarım Kilo</a>
+      <a href="#firin">Fırın</a>
+      <a href="#calisana">Çalışana Özel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="izgara">
+      <h2>IZGARA KEBAP</h2>
+      <div class="item"><div class="name">Adana Kebap</div><div class="price">₺420,00</div></div>
+      <div class="item"><div class="name">Kuşbaşı</div><div class="price">₺440,00</div></div>
+      <div class="item"><div class="name">Ciğer</div><div class="price">₺470,00</div></div>
+      <div class="item"><div class="name">Kemiksiz Tavuk</div><div class="price">₺420,00</div></div>
+      <div class="item"><div class="name">Kanat</div><div class="price">₺420,00</div></div>
+      <div class="item"><div class="name">Pirzola</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Beyti</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Sarma Beyti</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Külbastı</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Kazbaşı</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Yağlıkara</div><div class="price">₺600,00</div></div>
+    </section>
+
+    <section id="kiloluk">
+      <h2>KİLOLUK ÜRÜNLER</h2>
+      <div class="item"><div class="name">Adana</div><div class="price">₺1.800,00</div></div>
+      <div class="item"><div class="name">Kuşbaşı</div><div class="price">₺2.000,00</div></div>
+      <div class="item"><div class="name">Tavuk</div><div class="price">₺950,00</div></div>
+      <div class="item"><div class="name">Pirzola</div><div class="price">₺2.000,00</div></div>
+      <div class="item"><div class="name">Ciğer</div><div class="price">₺2.000,00</div></div>
+      <div class="item"><div class="name">Kaburga</div><div class="price">₺2.000,00</div></div>
+      <div class="item"><div class="name">Kanat</div><div class="price">₺950,00</div></div>
+      <div class="item"><div class="name">Adana Lahmacun (50 Adet)</div><div class="price">₺1.650,00</div></div>
+    </section>
+
+    <section id="yarim">
+      <h2>YARIM KİLOLUK ÜRÜNLER</h2>
+      <div class="item"><div class="name">Adana</div><div class="price">₺1.000,00</div></div>
+      <div class="item"><div class="name">Kuşbaşı</div><div class="price">₺1.100,00</div></div>
+      <div class="item"><div class="name">Tavuk</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Pirzola</div><div class="price">₺1.100,00</div></div>
+      <div class="item"><div class="name">Ciğer</div><div class="price">₺1.100,00</div></div>
+      <div class="item"><div class="name">Kaburga</div><div class="price">₺1.000,00</div></div>
+      <div class="item"><div class="name">Kanat</div><div class="price">₺600,00</div></div>
+      <div class="item"><div class="name">Adana Lahmacun (25 Adet)</div><div class="price">₺1.000,00</div></div>
+    </section>
+
+    <section id="firin">
+      <h2>FIRIN ÜRÜNLERİ</h2>
+      <div class="item"><div class="name">Adana Lahmacun</div><div class="price">₺330,00</div></div>
+      <div class="item"><div class="name">Antep Lahmacun</div><div class="price">₺330,00</div></div>
+      <div class="item"><div class="name">Çıtır Lahmacun</div><div class="price">₺250,00</div></div>
+      <div class="item"><div class="name">Kıymalı Pide</div><div class="price">₺330,00</div></div>
+      <div class="item"><div class="name">Kaşarlı Pide</div><div class="price">₺330,00</div></div>
+      <div class="item"><div class="name">Kuşbaşılı Pide</div><div class="price">₺330,00</div></div>
+      <div class="item"><div class="name">Karışık Pide</div><div class="price">₺330,00</div></div>
+    </section>
+
+    <section id="calisana">
+      <h2>ÇALIŞANA ÖZEL</h2>
+      <div class="item"><div class="name">Çalışan Menü</div><div class="price">₺350,00</div></div>
+    </section>
+  </main>
+
+  <footer>© Cihangir Kebap</footer>
+</body>
+</html>
