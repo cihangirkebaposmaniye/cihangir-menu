@@ -6,6 +6,7 @@
 <title>Cihangir Kebap Menü</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -57,22 +58,22 @@ margin-top:8px
 .plate-area{
 position:relative;
 margin:35px auto;
-width:270px;
-height:270px
+width:280px;
+height:280px
 }
 
 .smoke{
 position:absolute;
-width:130px;
-height:130px;
-background:rgba(255,255,255,.1);
+width:140px;
+height:140px;
+background:rgba(255,255,255,.12);
 border-radius:50%;
-filter:blur(25px);
+filter:blur(30px);
 animation:smoke 4s infinite
 }
 
 .smoke1{
-top:20px;
+top:10px;
 left:0
 }
 
@@ -83,17 +84,21 @@ animation-delay:2s
 }
 
 @keyframes smoke{
+
 0%{
 transform:translateY(30px) scale(.7);
 opacity:0
 }
+
 50%{
 opacity:1
 }
+
 100%{
-transform:translateY(-80px) scale(1.5);
+transform:translateY(-90px) scale(1.6);
 opacity:0
 }
+
 }
 
 .plate{
@@ -101,13 +106,13 @@ width:100%;
 height:100%;
 border-radius:50%;
 background:
-radial-gradient(circle,#fff 50%,#ddd 51%,#f5f5f5 70%);
+radial-gradient(circle,#fff 52%,#ddd 53%,#f5f5f5 72%);
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden;
-box-shadow:0 0 50px rgba(255,166,0,.45);
-animation:rotatePlate 18s linear infinite
+box-shadow:0 0 55px rgba(255,166,0,.5);
+animation:rotatePlate 20s linear infinite
 }
 
 @keyframes rotatePlate{
@@ -135,26 +140,29 @@ margin:35px auto
 
 .cat-btn{
 background:#120700;
-border:1px solid #5c3a00;
+border:1px solid #6d4200;
 border-radius:24px;
 padding:18px;
 cursor:pointer;
-box-shadow:0 0 20px rgba(255,140,0,.18);
-transition:.3s
+box-shadow:0 0 25px rgba(255,140,0,.18);
+transition:.3s;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:16px
 }
 
 .cat-btn:hover{
-transform:scale(1.04);
-box-shadow:0 0 35px rgba(255,166,0,.5)
+transform:scale(1.03);
+box-shadow:0 0 40px rgba(255,166,0,.45)
 }
 
 .cat-img{
-width:100px;
-height:100px;
+width:95px;
+height:95px;
 object-fit:cover;
 border-radius:18px;
-border:2px solid #ffb52e;
-margin-bottom:12px
+border:2px solid #ffb52e
 }
 
 .cat-btn span{
@@ -182,7 +190,7 @@ box-shadow:0 0 20px rgba(255,140,0,.18)
 
 .product img{
 width:100%;
-max-height:330px;
+max-height:340px;
 object-fit:cover;
 border-radius:20px;
 margin-bottom:15px
@@ -190,15 +198,15 @@ margin-bottom:15px
 
 .product h2{
 color:#ffb52e;
-font-size:27px;
-margin-bottom:10px
+font-size:28px;
+margin-bottom:12px
 }
 
 .price-line{
 background:#1f0d00;
 border:1px solid #5c3a00;
 border-radius:14px;
-padding:10px;
+padding:12px;
 margin:8px 0;
 text-align:left
 }
@@ -224,24 +232,33 @@ font-size:14px
 @media(max-width:768px){
 
 h1{
-font-size:31px
+font-size:30px
 }
 
 .plate-area{
-width:245px;
-height:245px
+width:240px;
+height:240px
+}
+
+.categories{
+grid-template-columns:1fr
+}
+
+.cat-btn{
+padding:16px
 }
 
 .cat-img{
-width:86px;
-height:86px
+width:80px;
+height:80px
 }
 
 .cat-btn span{
-font-size:17px
+font-size:18px
 }
 
 }
+
 </style>
 </head>
 
@@ -261,7 +278,7 @@ Gerçek Adana Lezzeti
 <div class="smoke smoke2"></div>
 
 <div class="plate">
-<img id="plateImage" src="images/adana.jpg">
+<img src="images/cihangir.png">
 </div>
 
 </div>
@@ -294,7 +311,7 @@ Gerçek Adana Lezzeti
 </button>
 
 <button class="cat-btn" onclick="showCategory('icecek')">
-<img src="images/adana.jpg" class="cat-img">
+<img src="images/icecek.jpg" class="cat-img">
 <span>İÇECEKLER</span>
 </button>
 
@@ -309,8 +326,6 @@ QR Menü • Osmaniye
 <script>
 
 const menu = {
-
-/* KEBAPLAR */
 
 kebap:[
 
@@ -352,101 +367,9 @@ prices:[
 ["1100₺","Yarım KG","6 Şiş + 6 Çeşit Meze"],
 ["2000₺","1 KG","12 Şiş + 6 Çeşit Meze"]
 ]
-},
-
-{
-name:"Pirzola",
-image:"images/pirzola.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"],
-["1100₺","Yarım KG","6 Adet + 6 Çeşit Meze"],
-["2000₺","1 KG","12 Adet + 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Et Çöp Şiş",
-image:"images/etcopsis.jpg",
-prices:[
-["440₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Beyti",
-image:"images/beyti.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Sarma Beyti",
-image:"images/sarmabeyti.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Special Sarma Beyti",
-image:"images/specialsarmabeyti.jpg",
-prices:[
-["720₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Kazbaşı",
-image:"images/kazbasi.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Külbastı",
-image:"images/kulbasti.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Yağlı Kara",
-image:"images/yaglikara.jpg",
-prices:[
-["600₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Patlıcan Kebabı",
-image:"images/patlicankebabi.jpg",
-prices:[
-["650₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"Tereyağlı Lokum",
-image:"images/tereyaglilokum.jpg",
-prices:[
-["650₺","Porsiyon","+ 6 Çeşit Meze"]
-]
-},
-
-{
-name:"İki Yüzlü Kebap",
-image:"images/ikiyuzlukebap.jpg",
-prices:[
-["720₺","Porsiyon","+ 6 Çeşit Meze"]
-]
 }
 
 ],
-
-/* TAVUK */
 
 tavuk:[
 
@@ -471,8 +394,6 @@ prices:[
 }
 
 ],
-
-/* DÜRÜM */
 
 durum:[
 
@@ -526,8 +447,6 @@ prices:[
 
 ],
 
-/* LAHMACUN */
-
 lahmacun:[
 
 {
@@ -555,8 +474,6 @@ prices:[
 }
 
 ],
-
-/* PİDE */
 
 pide:[
 
@@ -601,8 +518,6 @@ prices:[
 }
 
 ],
-
-/* İÇECEKLER */
 
 icecek:[
 
@@ -686,11 +601,6 @@ ${priceHtml}
 `;
 
 });
-
-if(menu[category][0].image){
-document.getElementById("plateImage").src =
-menu[category][0].image;
-}
 
 window.scrollTo({
 top:620,
