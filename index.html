@@ -4,106 +4,590 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cihangir Kebap Menü</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:radial-gradient(circle at top,#3a1800,#000);color:white;min-height:100vh;padding:20px;overflow-x:hidden;text-align:center}
-.logo-circle{width:90px;height:90px;border-radius:50%;border:2px solid #ffb52e;display:flex;align-items:center;justify-content:center;margin:auto;font-size:40px;background:#1a0c00;box-shadow:0 0 30px rgba(255,166,0,.5);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-h1{margin-top:15px;font-size:38px;letter-spacing:2px}.subtitle{color:#ffb52e;margin-top:8px;font-size:18px}
-.plate-area{position:relative;margin:35px auto;width:280px;height:280px}.smoke{position:absolute;width:130px;height:130px;background:rgba(255,255,255,.09);border-radius:50%;filter:blur(25px);animation:smoke 4s infinite}
-.smoke1{top:20px;left:20px}.smoke2{top:0;right:20px;animation-delay:2s}
-@keyframes smoke{0%{transform:translateY(30px) scale(.7);opacity:0}50%{opacity:1}100%{transform:translateY(-70px) scale(1.5);opacity:0}}
-.plate{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,#fff 50%,#ddd 51%,#f5f5f5 70%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 0 50px rgba(255,166,0,.4);animation:rotatePlate 18s linear infinite}
-@keyframes rotatePlate{100%{transform:rotate(360deg)}}
-.plate img{width:88%;height:88%;object-fit:cover;border-radius:50%;animation:foodFloat 3s ease-in-out infinite}
-@keyframes foodFloat{50%{transform:translateY(-8px)}}
-.categories{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:700px;margin:35px auto}
-.cat-btn{background:#120700;border:1px solid #5c3a00;border-radius:24px;padding:18px;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(255,140,0,.15)}
-.cat-btn:hover{transform:scale(1.04);box-shadow:0 0 35px rgba(255,166,0,.5)}
-.cat-img{width:100px;height:100px;object-fit:cover;border-radius:18px;border:2px solid #ffb52e;margin-bottom:12px}
-.cat-btn span{font-size:20px;font-weight:bold;color:#ffb52e}
-#products{margin-top:30px;display:grid;grid-template-columns:1fr;gap:18px;max-width:800px;margin-left:auto;margin-right:auto}
-.product{background:#120700;border-radius:24px;padding:18px;border:1px solid #5c3a00;box-shadow:0 0 20px rgba(255,140,0,.15)}
-.product img{width:100%;max-height:330px;object-fit:cover;border-radius:20px;margin-bottom:15px}
-.product h2{color:#ffb52e;font-size:27px;margin-bottom:8px}.price{font-size:27px;font-weight:bold}
-.footer{margin-top:40px;color:#aaa;font-size:14px}
-@media(max-width:768px){h1{font-size:32px}.plate-area{width:250px;height:250px}.cat-img{width:88px;height:88px}.cat-btn span{font-size:17px}}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif
+}
+
+body{
+background:radial-gradient(circle at top,#3a1800,#000);
+color:white;
+min-height:100vh;
+padding:20px;
+text-align:center
+}
+
+.logo-circle{
+width:90px;
+height:90px;
+border-radius:50%;
+border:2px solid #ffb52e;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+font-size:40px;
+background:#1a0c00;
+box-shadow:0 0 30px rgba(255,166,0,.5);
+animation:pulse 2s infinite
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.05)}
+}
+
+h1{
+margin-top:15px;
+font-size:36px
+}
+
+.subtitle{
+color:#ffb52e;
+margin-top:8px
+}
+
+/* TABAK */
+
+.plate-area{
+position:relative;
+margin:35px auto;
+width:270px;
+height:270px
+}
+
+.smoke{
+position:absolute;
+width:130px;
+height:130px;
+background:rgba(255,255,255,.1);
+border-radius:50%;
+filter:blur(25px);
+animation:smoke 4s infinite
+}
+
+.smoke1{
+top:20px;
+left:0
+}
+
+.smoke2{
+top:0;
+right:0;
+animation-delay:2s
+}
+
+@keyframes smoke{
+0%{
+transform:translateY(30px) scale(.7);
+opacity:0
+}
+50%{
+opacity:1
+}
+100%{
+transform:translateY(-80px) scale(1.5);
+opacity:0
+}
+}
+
+.plate{
+width:100%;
+height:100%;
+border-radius:50%;
+background:
+radial-gradient(circle,#fff 50%,#ddd 51%,#f5f5f5 70%);
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+box-shadow:0 0 50px rgba(255,166,0,.45);
+animation:rotatePlate 18s linear infinite
+}
+
+@keyframes rotatePlate{
+100%{
+transform:rotate(360deg)
+}
+}
+
+.plate img{
+width:88%;
+height:88%;
+object-fit:cover;
+border-radius:50%
+}
+
+/* KATEGORİLER */
+
+.categories{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+max-width:700px;
+margin:35px auto
+}
+
+.cat-btn{
+background:#120700;
+border:1px solid #5c3a00;
+border-radius:24px;
+padding:18px;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,140,0,.18);
+transition:.3s
+}
+
+.cat-btn:hover{
+transform:scale(1.04);
+box-shadow:0 0 35px rgba(255,166,0,.5)
+}
+
+.cat-img{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:18px;
+border:2px solid #ffb52e;
+margin-bottom:12px
+}
+
+.cat-btn span{
+font-size:20px;
+font-weight:bold;
+color:#ffb52e
+}
+
+/* ÜRÜNLER */
+
+#products{
+display:grid;
+gap:20px;
+max-width:850px;
+margin:30px auto
+}
+
+.product{
+background:#120700;
+border-radius:24px;
+padding:18px;
+border:1px solid #5c3a00;
+box-shadow:0 0 20px rgba(255,140,0,.18)
+}
+
+.product img{
+width:100%;
+max-height:330px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:15px
+}
+
+.product h2{
+color:#ffb52e;
+font-size:27px;
+margin-bottom:10px
+}
+
+.price-line{
+background:#1f0d00;
+border:1px solid #5c3a00;
+border-radius:14px;
+padding:10px;
+margin:8px 0;
+text-align:left
+}
+
+.price-line strong{
+color:#ffb52e;
+font-size:21px
+}
+
+.price-line small{
+display:block;
+color:#ddd;
+margin-top:4px;
+font-size:14px
+}
+
+.footer{
+margin-top:40px;
+color:#aaa;
+font-size:14px
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:31px
+}
+
+.plate-area{
+width:245px;
+height:245px
+}
+
+.cat-img{
+width:86px;
+height:86px
+}
+
+.cat-btn span{
+font-size:17px
+}
+
+}
 </style>
 </head>
+
 <body>
 
 <div class="logo-circle">🔥</div>
+
 <h1>CİHANGİR KEBAP</h1>
-<div class="subtitle">Gerçek Adana Lezzeti</div>
+
+<div class="subtitle">
+Gerçek Adana Lezzeti
+</div>
 
 <div class="plate-area">
-  <div class="smoke smoke1"></div>
-  <div class="smoke smoke2"></div>
-  <div class="plate"><img id="plateImage" src="images/adana.jpg"></div>
+
+<div class="smoke smoke1"></div>
+<div class="smoke smoke2"></div>
+
+<div class="plate">
+<img id="plateImage" src="images/adana.jpg">
+</div>
+
 </div>
 
 <div class="categories">
-  <button class="cat-btn" onclick="showCategory('kebap')"><img src="images/adana.jpg" class="cat-img"><span>KEBAPLAR</span></button>
-  <button class="cat-btn" onclick="showCategory('pide')"><img src="images/karisikpide.jpg" class="cat-img"><span>PİDELER</span></button>
-  <button class="cat-btn" onclick="showCategory('lahmacun')"><img src="images/findiklahmacun.jpg" class="cat-img"><span>LAHMACUN</span></button>
-  <button class="cat-btn" onclick="showCategory('tavuk')"><img src="images/kemiksiztavuk.jpg" class="cat-img"><span>TAVUK</span></button>
+
+<button class="cat-btn" onclick="showCategory('kebap')">
+<img src="images/adana.jpg" class="cat-img">
+<span>KEBAPLAR</span>
+</button>
+
+<button class="cat-btn" onclick="showCategory('tavuk')">
+<img src="images/kemiksiztavuk.jpg" class="cat-img">
+<span>TAVUK</span>
+</button>
+
+<button class="cat-btn" onclick="showCategory('durum')">
+<img src="images/adana.jpg" class="cat-img">
+<span>DÜRÜMLER</span>
+</button>
+
+<button class="cat-btn" onclick="showCategory('pide')">
+<img src="images/karisikpide.jpg" class="cat-img">
+<span>PİDELER</span>
+</button>
+
+<button class="cat-btn" onclick="showCategory('lahmacun')">
+<img src="images/findiklahmacun.jpg" class="cat-img">
+<span>LAHMACUN</span>
+</button>
+
+<button class="cat-btn" onclick="showCategory('icecek')">
+<img src="images/adana.jpg" class="cat-img">
+<span>İÇECEKLER</span>
+</button>
+
 </div>
 
 <div id="products"></div>
 
-<div class="footer">QR Menü • Osmaniye</div>
+<div class="footer">
+QR Menü • Osmaniye
+</div>
 
 <script>
+
 const menu = {
+
 kebap:[
-{name:"Adana Kebap",image:"images/adana.jpg",price:"390₺"},
-{name:"Ciğer",image:"images/ciger.jpg",price:"470₺"},
-{name:"Kuşbaşı",image:"images/kusbasi.jpg",price:"440₺"},
-{name:"Kaburga Şiş",image:"images/kaburga.jpg",price:"420₺"},
-{name:"Et Çöp Şiş",image:"images/etcopsis.jpg",price:"440₺"},
-{name:"Beyti",image:"images/beyti.jpg",price:"600₺"},
-{name:"Sarma Beyti",image:"images/sarmabeyti.jpg",price:"600₺"},
-{name:"Special Sarma Beyti",image:"images/specialsarmabeyti.jpg",price:"720₺"},
-{name:"Pirzola",image:"images/pirzola.jpg",price:"600₺"},
-{name:"Kazbaşı",image:"images/kazbasi.jpg",price:"600₺"},
-{name:"Külbastı",image:"images/kulbasti.jpg",price:"600₺"},
-{name:"Yağlı Kara",image:"images/yaglikara.jpg",price:"600₺"},
-{name:"Patlıcan Kebabı",image:"images/patlicankebabi.jpg",price:"650₺"},
-{name:"Tereyağlı Lokum",image:"images/tereyaglilokum.jpg",price:"650₺"},
-{name:"İki Yüzlü Kebap",image:"images/ikiyuzlukebap.jpg",price:"720₺"}
-],
-pide:[
-{name:"Kıymalı Pide",image:"images/kiymalipide.jpg",price:"330₺"},
-{name:"Kaşarlı Pide",image:"images/kasarlipide.jpg",price:"330₺"},
-{name:"Kuşbaşılı Pide",image:"images/kusbasilipide.jpg",price:"330₺"},
-{name:"Kuşbaşılı Kaşarlı Pide",image:"images/kusbasilikasarlipide.jpg",price:"330₺"},
-{name:"Karışık Pide",image:"images/karisikpide.jpg",price:"330₺"}
-],
-lahmacun:[
-{name:"Adana Lahmacun",image:"images/adanalahmacun.jpg",price:"330₺"},
-{name:"Antep Lahmacun",image:"images/anteplahmacun.jpg",price:"330₺"},
-{name:"Fındık Lahmacun",image:"images/findiklahmacun.jpg",price:"330₺"}
-],
-tavuk:[
-{name:"Kemiksiz Tavuk",image:"images/kemiksiztavuk.jpg",price:"420₺"},
-{name:"Kanat",image:"images/kanat.jpg",price:"420₺"}
+{
+name:"Adana Kebap",
+image:"images/adana.jpg",
+prices:[
+["390₺","Porsiyon","150GR + 6 Çeşit Meze"],
+["1000₺","Yarım KG","+ 6 Çeşit Meze"],
+["1800₺","1 KG","+ 6 Çeşit Meze"]
 ]
+},
+{
+name:"Kaburga Şiş",
+image:"images/kaburga.jpg",
+prices:[
+["450₺","Porsiyon","+ 6 Çeşit Meze"],
+["1000₺","Yarım KG","+ 6 Çeşit Meze"],
+["2000₺","1 KG","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Ciğer",
+image:"images/ciger.jpg",
+prices:[
+["470₺","Porsiyon","+ 6 Çeşit Meze"],
+["1100₺","Yarım KG","+ 6 Çeşit Meze"],
+["2000₺","1 KG","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Kuşbaşı",
+image:"images/kusbasi.jpg",
+prices:[
+["440₺","Porsiyon","+ 6 Çeşit Meze"],
+["1100₺","Yarım KG","+ 6 Çeşit Meze"],
+["2000₺","1 KG","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Pirzola",
+image:"images/pirzola.jpg",
+prices:[
+["600₺","Porsiyon","+ 6 Çeşit Meze"],
+["1100₺","Yarım KG","+ 6 Çeşit Meze"],
+["2000₺","1 KG","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Et Çöp Şiş",
+image:"images/etcopsis.jpg",
+prices:[
+["440₺","Porsiyon","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Beyti",
+image:"images/beyti.jpg",
+prices:[
+["600₺","Porsiyon","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Sarma Beyti",
+image:"images/sarmabeyti.jpg",
+prices:[
+["600₺","Porsiyon","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Special Sarma Beyti",
+image:"images/specialsarmabeyti.jpg",
+prices:[
+["720₺","Porsiyon","+ 6 Çeşit Meze"]
+]
+}
+],
+
+tavuk:[
+{
+name:"Kemiksiz Tavuk",
+image:"images/kemiksiztavuk.jpg",
+prices:[
+["420₺","Porsiyon","+ 6 Çeşit Meze"],
+["600₺","Yarım KG","+ 6 Çeşit Meze"],
+["950₺","1 KG","+ 6 Çeşit Meze"]
+]
+},
+{
+name:"Kanat",
+image:"images/kanat.jpg",
+prices:[
+["420₺","Porsiyon","+ 6 Çeşit Meze"],
+["600₺","Yarım KG","+ 6 Çeşit Meze"],
+["950₺","1 KG","+ 6 Çeşit Meze"]
+]
+}
+],
+
+durum:[
+{
+name:"Tavuk Dürüm",
+image:"",
+prices:[
+["275₺","Dürüm","Özel Lavaş + Garnitür"]
+]
+},
+{
+name:"Adana Dürüm",
+image:"",
+prices:[
+["275₺","Dürüm","150GR Adana + Garnitür"]
+]
+},
+{
+name:"Kuşbaşı Dürüm",
+image:"",
+prices:[
+["300₺","Dürüm","Kuzu Kuşbaşı + Garnitür"]
+]
+},
+{
+name:"Ciğer Dürüm",
+image:"",
+prices:[
+["300₺","Dürüm","Ciğer Şiş + Garnitür"]
+]
+},
+{
+name:"Et Çöp Şiş Dürüm",
+image:"",
+prices:[
+["300₺","Dürüm","Et Çöp Şiş + Garnitür"]
+]
+},
+{
+name:"Kaburga Şiş Dürüm",
+image:"",
+prices:[
+["300₺","Dürüm","Kaburga Şiş + Garnitür"]
+]
+}
+],
+
+lahmacun:[
+{
+name:"Adana Lahmacun",
+image:"images/adanalahmacun.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+},
+{
+name:"Antep Lahmacun",
+image:"images/anteplahmacun.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+},
+{
+name:"Fındık Lahmacun",
+image:"images/findiklahmacun.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+}
+],
+
+pide:[
+{
+name:"Kıymalı Pide",
+image:"images/kiymalipide.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+},
+{
+name:"Kaşarlı Pide",
+image:"images/kasarlipide.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+},
+{
+name:"Kuşbaşılı Pide",
+image:"images/kusbasilipide.jpg",
+prices:[
+["330₺","Porsiyon",""]
+]
+}
+],
+
+icecek:[
+{
+name:"Açık Ayran",
+image:"",
+prices:[
+["50₺","İçecek","Soğuk Servis"]
+]
+},
+{
+name:"Kapalı Ayran",
+image:"",
+prices:[
+["50₺","İçecek","Soğuk Servis"]
+]
+},
+{
+name:"Açık Şalgam",
+image:"",
+prices:[
+["50₺","İçecek","Acılı / Acısız"]
+]
+},
+{
+name:"Kapalı Şalgam",
+image:"",
+prices:[
+["50₺","İçecek","Acılı / Acısız"]
+]
+},
+{
+name:"Kutu Kola",
+image:"",
+prices:[
+["70₺","İçecek","330ML"]
+]
+}
+]
+
 };
 
 function showCategory(category){
-  const productsDiv=document.getElementById("products");
-  productsDiv.innerHTML="";
-  menu[category].forEach(product=>{
-    productsDiv.innerHTML += `
-      <div class="product">
-        <img src="${product.image}">
-        <h2>${product.name}</h2>
-        <div class="price">${product.price}</div>
-      </div>`;
-  });
-  document.getElementById("plateImage").src = menu[category][0].image;
-  window.scrollTo({top:620,behavior:"smooth"});
+
+const productsDiv=document.getElementById("products");
+
+productsDiv.innerHTML="";
+
+menu[category].forEach(product=>{
+
+let priceHtml="";
+
+product.prices.forEach(p=>{
+
+priceHtml += `
+<div class="price-line">
+<strong>${p[0]}</strong> ${p[1]}
+<small>${p[2]}</small>
+</div>
+`;
+
+});
+
+productsDiv.innerHTML += `
+
+<div class="product">
+
+${product.image ? `<img src="${product.image}">` : ""}
+
+<h2>${product.name}</h2>
+
+${priceHtml}
+
+</div>
+
+`;
+
+});
+
+if(menu[category][0].image){
+document.getElementById("plateImage").src =
+menu[category][0].image;
 }
+
+window.scrollTo({
+top:620,
+behavior:"smooth"
+});
+
+}
+
 </script>
 
 </body>
