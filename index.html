@@ -3,322 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cihangir Kebap QR Menü</title>
+
+<title>Cihangir Kebap Menü</title>
 
 <style>
-
-:root{
---gold:#d7a84f;
---gold2:#ffcf72;
---bg:#090705;
---text:#fff8ea;
-}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
 background:
-radial-gradient(circle at top, rgba(255,140,0,.15), transparent 30%),
-linear-gradient(180deg,#130904,#020202);
-color:var(--text);
-overflow-x:hidden;
+radial-gradient(circle at top,#3a1800,#000);
+color:white;
 min-height:100vh;
+padding:20px;
+overflow-x:hidden;
+text-align:center;
 }
 
-.container{
-width:min(430px,100%);
-margin:auto;
-padding:20px 15px 40px;
-}
+/* LOGO */
 
 .logo{
+margin-top:10px;
+}
+
+.logo-circle{
 width:90px;
 height:90px;
-margin:auto;
 border-radius:50%;
+border:2px solid #ffb52e;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:42px;
-background:
-radial-gradient(circle, rgba(255,255,255,.2), transparent),
-linear-gradient(145deg,#2a1709,#050302);
-border:2px solid var(--gold);
-box-shadow:0 0 30px rgba(215,168,79,.3);
-animation:float 3s ease-in-out infinite;
+margin:auto;
+font-size:40px;
+background:#1a0c00;
+box-shadow:0 0 30px rgba(255,166,0,0.5);
+animation:pulse 2s infinite;
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
-.title{
-text-align:center;
-font-size:30px;
-font-weight:bold;
-margin-top:12px;
-letter-spacing:1px;
+h1{
+margin-top:15px;
+font-size:50px;
+color:white;
+letter-spacing:2px;
 }
 
 .subtitle{
-text-align:center;
-color:var(--gold2);
-margin-top:5px;
-font-size:14px;
+color:#ffb52e;
+margin-top:8px;
+font-size:22px;
 }
+
+/* TABAK */
 
 .plate-area{
 position:relative;
-margin-top:30px;
-min-height:320px;
+margin:40px auto;
+width:320px;
+height:320px;
 }
 
 .smoke{
 position:absolute;
 width:120px;
 height:120px;
+background:rgba(255,255,255,0.08);
 border-radius:50%;
-background:radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
-filter:blur(20px);
+filter:blur(25px);
 animation:smoke 4s infinite;
-opacity:.3;
 }
 
-.smoke:nth-child(1){left:40%;top:60%}
-.smoke:nth-child(2){left:20%;top:70%;animation-delay:1s}
-.smoke:nth-child(3){left:60%;top:65%;animation-delay:2s}
+.smoke1{
+top:20px;
+left:40px;
+}
+
+.smoke2{
+top:0;
+right:40px;
+animation-delay:2s;
+}
 
 @keyframes smoke{
 0%{
-transform:translateY(20px) scale(.5);
+transform:translateY(20px) scale(0.8);
 opacity:0;
 }
-30%{
-opacity:.3;
+50%{
+opacity:1;
 }
 100%{
-transform:translateY(-150px) scale(1.5);
+transform:translateY(-50px) scale(1.4);
 opacity:0;
 }
 }
 
 .plate{
-width:250px;
-height:250px;
+width:100%;
+height:100%;
 border-radius:50%;
-margin:auto;
-position:relative;
 background:
-radial-gradient(circle at center,
-#fff 0 40%,
-#ddd 41% 52%,
-#fff 53% 100%);
-box-shadow:
-0 20px 40px rgba(0,0,0,.6),
-inset 0 10px 20px rgba(255,255,255,.8);
-animation:plateMove 4s ease-in-out infinite;
-overflow:hidden;
-}
-
-@keyframes plateMove{
-0%,100%{transform:rotate(-2deg)}
-50%{transform:rotate(2deg)}
-}
-
-.plate-text{
-position:absolute;
-inset:0;
+radial-gradient(circle,#ffffff 50%,#dcdcdc 51%,#f5f5f5 70%);
 display:flex;
 align-items:center;
 justify-content:center;
-flex-direction:column;
-color:#2b1707;
-font-weight:bold;
-z-index:5;
+position:relative;
+overflow:hidden;
+box-shadow:
+0 0 50px rgba(255,166,0,0.4);
+animation:rotatePlate 15s linear infinite;
 }
 
-.plate-text h2{
-font-size:30px;
+@keyframes rotatePlate{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
 }
 
-.food{
-position:absolute;
-inset:0;
-display:none;
-align-items:center;
-justify-content:center;
-z-index:4;
-animation:foodShow .4s ease;
-}
-
-.food img{
-width:180px;
-height:120px;
+.plate img{
+width:82%;
+height:82%;
 object-fit:cover;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.4);
+border-radius:50%;
+animation:foodFloat 3s ease-in-out infinite;
 }
 
-@keyframes foodShow{
-from{
-transform:scale(.3);
-opacity:0;
+@keyframes foodFloat{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
 }
-to{
-transform:scale(1);
-opacity:1;
-}
-}
+
+/* KATEGORİLER */
 
 .categories{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:20px;
-}
-
-.cat-btn,
-.item,
-.back{
-background:
-linear-gradient(145deg, rgba(25,17,10,.95), rgba(5,3,2,.95));
-border:1px solid rgba(215,168,79,.3);
-border-radius:18px;
-padding:15px;
-cursor:pointer;
-transition:.2s;
-}
-
-.cat-btn:active,
-.item:active{
-transform:scale(.97);
+gap:22px;
+max-width:700px;
+margin:40px auto;
 }
 
 .cat-btn{
-text-align:center;
-}
-
-.cat-btn .icon{
-font-size:30px;
-margin-bottom:5px;
-}
-
-.cat-btn .name{
-color:var(--gold2);
-font-weight:bold;
-}
-
-.screen{
-display:none;
-animation:fade .3s ease;
-}
-
-.screen.active{
-display:block;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateX(20px);
-}
-to{
-opacity:1;
-transform:translateX(0);
-}
-}
-
-.screen-title{
-text-align:center;
-margin:15px 0;
-font-size:24px;
-color:var(--gold2);
-}
-
-.item-list{
-display:grid;
-gap:10px;
-}
-
-.item{
+background:#120700;
+border:1px solid #5c3a00;
+border-radius:24px;
+padding:20px;
+cursor:pointer;
+transition:0.3s;
 display:flex;
-justify-content:space-between;
+flex-direction:column;
 align-items:center;
-gap:10px;
+justify-content:center;
+box-shadow:0 0 20px rgba(255,140,0,0.15);
 }
 
-.item img{
-width:70px;
-height:70px;
+.cat-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px rgba(255,166,0,0.5);
+}
+
+.cat-img{
+width:120px;
+height:120px;
 object-fit:cover;
-border-radius:14px;
-border:2px solid rgba(215,168,79,.4);
+border-radius:18px;
+border:2px solid #ffb52e;
+margin-bottom:15px;
+box-shadow:0 0 15px rgba(255,166,0,0.4);
 }
 
-.item-left{
-display:flex;
-align-items:center;
-gap:10px;
+.cat-btn span{
+font-size:24px;
+font-weight:bold;
+color:#ffb52e;
 }
 
-.item strong{
-display:block;
-font-size:15px;
+/* ÜRÜNLER */
+
+#products{
+margin-top:30px;
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.product{
+background:#120700;
+border-radius:24px;
+padding:20px;
+border:1px solid #5c3a00;
+box-shadow:0 0 20px rgba(255,140,0,0.15);
+}
+
+.product img{
+width:100%;
+border-radius:20px;
+margin-bottom:15px;
+}
+
+.product h2{
+color:#ffb52e;
+font-size:30px;
+margin-bottom:10px;
 }
 
 .price{
-font-size:20px;
+font-size:28px;
 font-weight:bold;
-color:var(--gold2);
-}
-
-.detail{
-text-align:center;
-}
-
-.detail h1{
-font-size:30px;
-margin-bottom:10px;
-color:var(--gold2);
-}
-
-.big-price{
-display:inline-block;
-padding:12px 25px;
-border-radius:999px;
-background:
-linear-gradient(145deg,var(--gold),#8e6320);
-color:#1a0d04;
-font-size:30px;
-font-weight:bold;
-box-shadow:0 0 30px rgba(255,207,114,.3);
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%,100%{transform:scale(1)}
-50%{transform:scale(1.05)}
-}
-
-.back{
-margin-top:20px;
-display:inline-block;
-color:var(--gold2);
-font-weight:bold;
-text-align:center;
+color:white;
 }
 
 .footer{
-text-align:center;
-margin-top:25px;
-font-size:12px;
-color:#888;
+margin-top:40px;
+color:#aaa;
+font-size:14px;
+}
+
+/* MOBİL */
+
+@media(max-width:768px){
+
+h1{
+font-size:34px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+.plate-area{
+width:250px;
+height:250px;
+}
+
+.cat-img{
+width:90px;
+height:90px;
+}
+
+.cat-btn span{
+font-size:18px;
+}
+
 }
 
 </style>
@@ -326,243 +266,203 @@ color:#888;
 
 <body>
 
-<div class="container">
+<div class="logo">
 
-<div class="logo">🔥</div>
+<div class="logo-circle">
+🔥
+</div>
 
-<div class="title">CİHANGİR KEBAP</div>
-<div class="subtitle">Gerçek Adana Lezzeti</div>
+<h1>CİHANGİR KEBAP</h1>
+
+<div class="subtitle">
+Gerçek Adana Lezzeti
+</div>
+
+</div>
 
 <div class="plate-area">
 
-<div class="smoke"></div>
-<div class="smoke"></div>
-<div class="smoke"></div>
+<div class="smoke smoke1"></div>
+<div class="smoke smoke2"></div>
 
-<div class="plate">
+<div class="plate" id="plate">
 
-<div class="food" id="food"></div>
-
-<div class="plate-text" id="plateText">
-<h2>MENÜ</h2>
-<span>Kategori Seçiniz</span>
-</div>
+<img id="plateImage" src="images/adana.jpg">
 
 </div>
 
 </div>
 
-<div id="home" class="screen active">
+<!-- KATEGORİLER -->
 
 <div class="categories">
 
-<div class="cat-btn" onclick="openCategory('Kebaplar')">
-<div class="icon">🔥</div>
-<div class="name">KEBAPLAR</div>
-</div>
+<button class="cat-btn" onclick="showCategory('kebap')">
 
-<div class="cat-btn" onclick="openCategory('Pideler')">
-<div class="icon">🥙</div>
-<div class="name">PİDELER</div>
-</div>
+<img src="images/adana.jpg" class="cat-img">
 
-<div class="cat-btn" onclick="openCategory('Lahmacun')">
-<div class="icon">🍕</div>
-<div class="name">LAHMACUN</div>
-</div>
+<span>KEBAPLAR</span>
 
-<div class="cat-btn" onclick="openCategory('Tavuk')">
-<div class="icon">🍗</div>
-<div class="name">TAVUK</div>
-</div>
+</button>
 
-</div>
+<button class="cat-btn" onclick="showCategory('pide')">
 
-</div>
+<img src="images/karisikpide.jpg" class="cat-img">
 
-<div id="category" class="screen">
+<span>PİDELER</span>
 
-<div class="screen-title" id="categoryTitle"></div>
+</button>
 
-<div class="item-list" id="itemList"></div>
+<button class="cat-btn" onclick="showCategory('lahmacun')">
 
-<div style="text-align:center">
-<div class="back" onclick="goHome()">← Geri</div>
-</div>
+<img src="images/findiklahmacun.jpg" class="cat-img">
+
+<span>LAHMACUN</span>
+
+</button>
+
+<button class="cat-btn" onclick="showCategory('tavuk')">
+
+<img src="images/kemiksiztavuk.jpg" class="cat-img">
+
+<span>TAVUK</span>
+
+</button>
 
 </div>
 
-<div id="detail" class="screen detail">
+<!-- ÜRÜNLER -->
 
-<h1 id="detailName"></h1>
-
-<div class="big-price" id="detailPrice"></div>
-
-<br>
-
-<div class="back" onclick="backCategory()">← Ürünlere Dön</div>
-
-</div>
+<div id="products"></div>
 
 <div class="footer">
 QR Menü • Osmaniye
-</div>
-
 </div>
 
 <script>
 
 const menu = {
 
-"Kebaplar":[
-
-{name:"Adana Kebap",price:"390 ₺",image:"images/adana.jpg"},
-{name:"Ciğer",price:"390 ₺",image:"images/ciger.jpg"},
-{name:"Kuşbaşı",price:"390 ₺",image:"images/kusbasi.jpg"},
-{name:"Kaburga Şiş",price:"450 ₺",image:"images/kaburga.jpg"},
-{name:"Et Çöp Şiş",price:"450 ₺",image:"images/etcopsis.jpg"},
-{name:"Beyti",price:"450 ₺",image:"images/beyti.jpg"},
-{name:"Sarma Beyti",price:"500 ₺",image:"images/sarmabeyti.jpg"},
-{name:"Special Sarma Beyti",price:"550 ₺",image:"images/specialsarmabeyti.jpg"},
-{name:"Pirzola",price:"600 ₺",image:"images/pirzola.jpg"},
-{name:"Kazbaşı",price:"500 ₺",image:"images/kazbasi.jpg"},
-{name:"Külbastı",price:"500 ₺",image:"images/kulbasti.jpg"},
-{name:"Yağlı Kara",price:"500 ₺",image:"images/yaglikara.jpg"},
-{name:"Patlıcan Kebabı",price:"500 ₺",image:"images/patlicankebabi.jpg"},
-{name:"Tereyağlı Lokum",price:"650 ₺",image:"images/tereyaglilokum.jpg"},
-{name:"İkiyüzlü Kebap",price:"550 ₺",image:"images/ikiyuzlukebap.jpg"}
-
+kebap:[
+{
+name:"Adana Kebap",
+image:"images/adana.jpg",
+price:"390₺"
+},
+{
+name:"Beyti",
+image:"images/beyti.jpg",
+price:"450₺"
+},
+{
+name:"Kaburga Şiş",
+image:"images/kaburga.jpg",
+price:"550₺"
+},
+{
+name:"Kuzu Kuşbaşı",
+image:"images/kusbasi.jpg",
+price:"520₺"
+},
+{
+name:"Pirzola",
+image:"images/pirzola.jpg",
+price:"650₺"
+},
+{
+name:"Patlıcan Kebabı",
+image:"images/patlican.jpg",
+price:"490₺"
+}
 ],
 
-"Tavuk":[
-
-{name:"Kemiksiz Tavuk",price:"320 ₺",image:"images/kemiksiztavuk.jpg"},
-{name:"Kanat",price:"320 ₺",image:"images/kanat.jpg"}
-
+pide:[
+{
+name:"Karışık Pide",
+image:"images/karisikpide.jpg",
+price:"350₺"
+},
+{
+name:"Kaşarlı Pide",
+image:"images/kasarli.jpg",
+price:"330₺"
+},
+{
+name:"Kıymalı Pide",
+image:"images/kiymali.jpg",
+price:"330₺"
+},
+{
+name:"Kuşbaşılı Pide",
+image:"images/kusbasilipide.jpg",
+price:"350₺"
+}
 ],
 
-"Lahmacun":[
-
-{name:"Adana Lahmacun",price:"120 ₺",image:"images/adanalahmacun.jpg"},
-{name:"Antep Lahmacun",price:"130 ₺",image:"images/anteplahmacun.jpg"},
-{name:"Fındık Lahmacun",price:"180 ₺",image:"images/findiklahmacun.jpg"}
-
+lahmacun:[
+{
+name:"Adana Lahmacun",
+image:"images/adanalahmacun.jpg",
+price:"330₺"
+},
+{
+name:"Antep Lahmacun",
+image:"images/anteplahmacun.jpg",
+price:"330₺"
+},
+{
+name:"Fındık Lahmacun",
+image:"images/findiklahmacun.jpg",
+price:"330₺"
+}
 ],
 
-"Pideler":[
-
-{name:"Kıymalı Pide",price:"250 ₺",image:"images/kiymalipide.jpg"},
-{name:"Kaşarlı Pide",price:"250 ₺",image:"images/kasarlipide.jpg"},
-{name:"Kuşbaşılı Pide",price:"320 ₺",image:"images/kusbasilipide.jpg"},
-{name:"Kuşbaşılı Kaşarlı Pide",price:"350 ₺",image:"images/kusbasilikasarlipide.jpg"},
-{name:"Karışık Pide",price:"400 ₺",image:"images/karisikpide.jpg"}
-
+tavuk:[
+{
+name:"Kemiksiz Tavuk",
+image:"images/kemiksiztavuk.jpg",
+price:"420₺"
+},
+{
+name:"Kanat",
+image:"images/kanat.jpg",
+price:"420₺"
+}
 ]
 
 };
 
-let currentCategory="";
+function showCategory(category){
 
-function setScreen(id){
+const productsDiv=document.getElementById("products");
 
-document.querySelectorAll(".screen")
-.forEach(s=>s.classList.remove("active"));
+productsDiv.innerHTML="";
 
-document.getElementById(id)
-.classList.add("active");
+menu[category].forEach(product=>{
 
-}
+productsDiv.innerHTML += `
 
-function openCategory(category){
+<div class="product">
 
-currentCategory=category;
+<img src="${product.image}">
 
-document.getElementById("categoryTitle")
-.innerText=category.toUpperCase();
+<h2>${product.name}</h2>
 
-const itemList=document.getElementById("itemList");
-
-itemList.innerHTML="";
-
-menu[category].forEach(item=>{
-
-const div=document.createElement("div");
-
-div.className="item";
-
-div.innerHTML=`
-
-<div class="item-left">
-
-<img src="${item.image}">
-
-<div>
-<strong>${item.name}</strong>
-</div>
+<div class="price">${product.price}</div>
 
 </div>
-
-<div class="price">${item.price}</div>
 
 `;
-
-div.onclick=()=>openDetail(item);
-
-itemList.appendChild(div);
 
 });
 
-document.getElementById("food").style.display="none";
+document.getElementById("plateImage").src =
+menu[category][0].image;
 
-document.getElementById("plateText")
-.innerHTML=`
-<h2>${category}</h2>
-`;
-
-setScreen("category");
-
-}
-
-function openDetail(item){
-
-document.getElementById("detailName")
-.innerText=item.name;
-
-document.getElementById("detailPrice")
-.innerText=item.price;
-
-const food=document.getElementById("food");
-
-food.innerHTML=`
-<img src="${item.image}">
-`;
-
-food.style.display="flex";
-
-document.getElementById("plateText")
-.innerHTML="";
-
-setScreen("detail");
-
-}
-
-function backCategory(){
-
-openCategory(currentCategory);
-
-}
-
-function goHome(){
-
-document.getElementById("food").style.display="none";
-
-document.getElementById("plateText")
-.innerHTML=`
-<h2>MENÜ</h2>
-<span>Kategori Seçiniz</span>
-`;
-
-setScreen("home");
+window.scrollTo({
+top:650,
+behavior:"smooth"
+});
 
 }
 
