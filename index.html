@@ -11,7 +11,6 @@
 --gold:#d7a84f;
 --gold2:#ffcf72;
 --bg:#090705;
---card:#15100b;
 --text:#fff8ea;
 }
 
@@ -19,7 +18,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
@@ -27,8 +26,8 @@ background:
 radial-gradient(circle at top, rgba(255,140,0,.15), transparent 30%),
 linear-gradient(180deg,#130904,#020202);
 color:var(--text);
-min-height:100vh;
 overflow-x:hidden;
+min-height:100vh;
 }
 
 .container{
@@ -40,12 +39,12 @@ padding:20px 15px 40px;
 .logo{
 width:90px;
 height:90px;
-margin:10px auto;
+margin:auto;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:40px;
+font-size:42px;
 background:
 radial-gradient(circle, rgba(255,255,255,.2), transparent),
 linear-gradient(145deg,#2a1709,#050302);
@@ -55,20 +54,16 @@ animation:float 3s ease-in-out infinite;
 }
 
 @keyframes float{
-0%,100%{
-transform:translateY(0px);
-}
-50%{
-transform:translateY(-8px);
-}
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
 }
 
 .title{
 text-align:center;
-font-size:28px;
+font-size:30px;
 font-weight:bold;
+margin-top:12px;
 letter-spacing:1px;
-margin-top:10px;
 }
 
 .subtitle{
@@ -95,22 +90,9 @@ animation:smoke 4s infinite;
 opacity:.3;
 }
 
-.smoke:nth-child(1){
-left:40%;
-top:60%;
-}
-
-.smoke:nth-child(2){
-left:20%;
-top:70%;
-animation-delay:1s;
-}
-
-.smoke:nth-child(3){
-left:60%;
-top:65%;
-animation-delay:2s;
-}
+.smoke:nth-child(1){left:40%;top:60%}
+.smoke:nth-child(2){left:20%;top:70%;animation-delay:1s}
+.smoke:nth-child(3){left:60%;top:65%;animation-delay:2s}
 
 @keyframes smoke{
 0%{
@@ -127,8 +109,8 @@ opacity:0;
 }
 
 .plate{
-width:240px;
-height:240px;
+width:250px;
+height:250px;
 border-radius:50%;
 margin:auto;
 position:relative;
@@ -141,15 +123,12 @@ box-shadow:
 0 20px 40px rgba(0,0,0,.6),
 inset 0 10px 20px rgba(255,255,255,.8);
 animation:plateMove 4s ease-in-out infinite;
+overflow:hidden;
 }
 
 @keyframes plateMove{
-0%,100%{
-transform:rotate(-2deg);
-}
-50%{
-transform:rotate(2deg);
-}
+0%,100%{transform:rotate(-2deg)}
+50%{transform:rotate(2deg)}
 }
 
 .plate-text{
@@ -165,12 +144,7 @@ z-index:5;
 }
 
 .plate-text h2{
-font-size:28px;
-}
-
-.plate-text span{
-font-size:13px;
-margin-top:5px;
+font-size:30px;
 }
 
 .food{
@@ -179,9 +153,16 @@ inset:0;
 display:none;
 align-items:center;
 justify-content:center;
-font-size:70px;
 z-index:4;
 animation:foodShow .4s ease;
+}
+
+.food img{
+width:180px;
+height:120px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.4);
 }
 
 @keyframes foodShow{
@@ -210,15 +191,13 @@ linear-gradient(145deg, rgba(25,17,10,.95), rgba(5,3,2,.95));
 border:1px solid rgba(215,168,79,.3);
 border-radius:18px;
 padding:15px;
-color:white;
 cursor:pointer;
 transition:.2s;
 }
 
 .cat-btn:active,
-.item:active,
-.back:active{
-transform:scale(.96);
+.item:active{
+transform:scale(.97);
 }
 
 .cat-btn{
@@ -227,7 +206,7 @@ text-align:center;
 
 .cat-btn .icon{
 font-size:30px;
-margin-bottom:6px;
+margin-bottom:5px;
 }
 
 .cat-btn .name{
@@ -271,17 +250,26 @@ gap:10px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+gap:10px;
+}
+
+.item img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:14px;
+border:2px solid rgba(215,168,79,.4);
+}
+
+.item-left{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .item strong{
 display:block;
-font-size:16px;
-}
-
-.item small{
-display:block;
-margin-top:5px;
-color:#bbb;
+font-size:15px;
 }
 
 .price{
@@ -296,14 +284,8 @@ text-align:center;
 
 .detail h1{
 font-size:30px;
-color:var(--gold2);
 margin-bottom:10px;
-}
-
-.detail p{
-color:#ccc;
-line-height:1.5;
-margin-bottom:15px;
+color:var(--gold2);
 }
 
 .big-price{
@@ -320,12 +302,8 @@ animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.05);
-}
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.05)}
 }
 
 .back{
@@ -333,6 +311,7 @@ margin-top:20px;
 display:inline-block;
 color:var(--gold2);
 font-weight:bold;
+text-align:center;
 }
 
 .footer{
@@ -362,7 +341,7 @@ color:#888;
 
 <div class="plate">
 
-<div class="food" id="food">🥩</div>
+<div class="food" id="food"></div>
 
 <div class="plate-text" id="plateText">
 <h2>MENÜ</h2>
@@ -377,24 +356,24 @@ color:#888;
 
 <div class="categories">
 
-<div class="cat-btn" onclick="openCategory('Izgara')">
+<div class="cat-btn" onclick="openCategory('Kebaplar')">
 <div class="icon">🔥</div>
-<div class="name">IZGARA</div>
+<div class="name">KEBAPLAR</div>
 </div>
 
-<div class="cat-btn" onclick="openCategory('Fırın')">
+<div class="cat-btn" onclick="openCategory('Pideler')">
+<div class="icon">🥙</div>
+<div class="name">PİDELER</div>
+</div>
+
+<div class="cat-btn" onclick="openCategory('Lahmacun')">
 <div class="icon">🍕</div>
-<div class="name">FIRIN</div>
+<div class="name">LAHMACUN</div>
 </div>
 
-<div class="cat-btn" onclick="openCategory('Dürümler')">
-<div class="icon">🌯</div>
-<div class="name">DÜRÜMLER</div>
-</div>
-
-<div class="cat-btn" onclick="openCategory('İçecekler')">
-<div class="icon">🥤</div>
-<div class="name">İÇECEKLER</div>
+<div class="cat-btn" onclick="openCategory('Tavuk')">
+<div class="icon">🍗</div>
+<div class="name">TAVUK</div>
 </div>
 
 </div>
@@ -417,8 +396,6 @@ color:#888;
 
 <h1 id="detailName"></h1>
 
-<p id="detailDesc"></p>
-
 <div class="big-price" id="detailPrice"></div>
 
 <br>
@@ -437,67 +414,54 @@ QR Menü • Osmaniye
 
 const menu = {
 
-"Izgara":[
+"Kebaplar":[
 
-{
-name:"Adana Kebap",
-price:"390 ₺",
-icon:"🍢",
-desc:"6 çeşit meze ile servis edilir."
-},
-
-{
-name:"Kuşbaşı Kebap",
-price:"390 ₺",
-icon:"🥩",
-desc:"Köz sebzeler ve lavaş ile servis edilir."
-},
-
-{
-name:"Kuzu Şiş",
-price:"390 ₺",
-icon:"🍖",
-desc:"Özel marine edilmiş kuzu eti."
-}
+{name:"Adana Kebap",price:"390 ₺",image:"images/adana.jpg"},
+{name:"Ciğer",price:"390 ₺",image:"images/ciger.jpg"},
+{name:"Kuşbaşı",price:"390 ₺",image:"images/kusbasi.jpg"},
+{name:"Kaburga Şiş",price:"450 ₺",image:"images/kaburga.jpg"},
+{name:"Et Çöp Şiş",price:"450 ₺",image:"images/etcopsis.jpg"},
+{name:"Beyti",price:"450 ₺",image:"images/beyti.jpg"},
+{name:"Sarma Beyti",price:"500 ₺",image:"images/sarmabeyti.jpg"},
+{name:"Special Sarma Beyti",price:"550 ₺",image:"images/specialsarmabeyti.jpg"},
+{name:"Pirzola",price:"600 ₺",image:"images/pirzola.jpg"},
+{name:"Kazbaşı",price:"500 ₺",image:"images/kazbasi.jpg"},
+{name:"Külbastı",price:"500 ₺",image:"images/kulbasti.jpg"},
+{name:"Yağlı Kara",price:"500 ₺",image:"images/yaglikara.jpg"},
+{name:"Patlıcan Kebabı",price:"500 ₺",image:"images/patlicankebabi.jpg"},
+{name:"Tereyağlı Lokum",price:"650 ₺",image:"images/tereyaglilokum.jpg"},
+{name:"İkiyüzlü Kebap",price:"550 ₺",image:"images/ikiyuzlukebap.jpg"}
 
 ],
 
-"Fırın":[
+"Tavuk":[
 
-{
-name:"Lahmacun",
-price:"120 ₺",
-icon:"🍕",
-desc:"Taş fırın lahmacun."
-}
+{name:"Kemiksiz Tavuk",price:"320 ₺",image:"images/kemiksiztavuk.jpg"},
+{name:"Kanat",price:"320 ₺",image:"images/kanat.jpg"}
 
 ],
 
-"Dürümler":[
+"Lahmacun":[
 
-{
-name:"Adana Dürüm",
-price:"220 ₺",
-icon:"🌯",
-desc:"Bol garnitürlü adana dürüm."
-}
+{name:"Adana Lahmacun",price:"120 ₺",image:"images/adanalahmacun.jpg"},
+{name:"Antep Lahmacun",price:"130 ₺",image:"images/anteplahmacun.jpg"},
+{name:"Fındık Lahmacun",price:"180 ₺",image:"images/findiklahmacun.jpg"}
 
 ],
 
-"İçecekler":[
+"Pideler":[
 
-{
-name:"Ayran",
-price:"40 ₺",
-icon:"🥛",
-desc:"Soğuk ayran."
-}
+{name:"Kıymalı Pide",price:"250 ₺",image:"images/kiymalipide.jpg"},
+{name:"Kaşarlı Pide",price:"250 ₺",image:"images/kasarlipide.jpg"},
+{name:"Kuşbaşılı Pide",price:"320 ₺",image:"images/kusbasilipide.jpg"},
+{name:"Kuşbaşılı Kaşarlı Pide",price:"350 ₺",image:"images/kusbasilikasarlipide.jpg"},
+{name:"Karışık Pide",price:"400 ₺",image:"images/karisikpide.jpg"}
 
 ]
 
 };
 
-let currentCategory = "";
+let currentCategory="";
 
 function setScreen(id){
 
@@ -511,45 +475,49 @@ document.getElementById(id)
 
 function openCategory(category){
 
-currentCategory = category;
+currentCategory=category;
 
 document.getElementById("categoryTitle")
-.innerText = category.toUpperCase();
+.innerText=category.toUpperCase();
 
-const itemList =
-document.getElementById("itemList");
+const itemList=document.getElementById("itemList");
 
-itemList.innerHTML = "";
+itemList.innerHTML="";
 
 menu[category].forEach(item=>{
 
-const div = document.createElement("div");
+const div=document.createElement("div");
 
-div.className = "item";
+div.className="item";
 
-div.innerHTML = `
+div.innerHTML=`
+
+<div class="item-left">
+
+<img src="${item.image}">
+
 <div>
-<strong>${item.icon} ${item.name}</strong>
-<small>${item.desc}</small>
+<strong>${item.name}</strong>
+</div>
+
 </div>
 
 <div class="price">${item.price}</div>
+
 `;
 
-div.onclick = ()=>openDetail(item);
+div.onclick=()=>openDetail(item);
 
 itemList.appendChild(div);
 
 });
 
-document.getElementById("plateText")
-.innerHTML = `
-<h2>${category.toUpperCase()}</h2>
-<span>Ürün Seçiniz</span>
-`;
+document.getElementById("food").style.display="none";
 
-document.getElementById("food")
-.style.display = "none";
+document.getElementById("plateText")
+.innerHTML=`
+<h2>${category}</h2>
+`;
 
 setScreen("category");
 
@@ -558,23 +526,21 @@ setScreen("category");
 function openDetail(item){
 
 document.getElementById("detailName")
-.innerText = item.name.toUpperCase();
-
-document.getElementById("detailDesc")
-.innerText = item.desc;
+.innerText=item.name;
 
 document.getElementById("detailPrice")
-.innerText = item.price;
+.innerText=item.price;
 
-const food =
-document.getElementById("food");
+const food=document.getElementById("food");
 
-food.innerText = item.icon;
+food.innerHTML=`
+<img src="${item.image}">
+`;
 
-food.style.display = "flex";
+food.style.display="flex";
 
 document.getElementById("plateText")
-.innerHTML = "";
+.innerHTML="";
 
 setScreen("detail");
 
@@ -588,11 +554,10 @@ openCategory(currentCategory);
 
 function goHome(){
 
-document.getElementById("food")
-.style.display = "none";
+document.getElementById("food").style.display="none";
 
 document.getElementById("plateText")
-.innerHTML = `
+.innerHTML=`
 <h2>MENÜ</h2>
 <span>Kategori Seçiniz</span>
 `;
