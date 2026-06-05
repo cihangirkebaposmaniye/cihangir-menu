@@ -9,24 +9,9 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5efe6;color:#21140f}
-.hero{
-  min-height:340px;
-  background:linear-gradient(rgba(20,8,3,.55),rgba(20,8,3,.88)),url("images/adana.jpg") center/cover;
-  color:white;text-align:center;padding:38px 18px 30px;position:relative;overflow:hidden;
-}
-.hero-smoke{
-  position:absolute;inset:0;
-  background:url("images/smoke.gif") center/cover no-repeat;
-  opacity:.18;
-  pointer-events:none;
-  z-index:1;
-}
-.hero-glow{
-  position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 100%,rgba(255,120,20,.22),transparent 45%);
-  animation:glow 5s infinite alternate ease-in-out;
-  z-index:2;
-}
+.hero{min-height:340px;background:linear-gradient(rgba(20,8,3,.55),rgba(20,8,3,.88)),url("images/adana.jpg") center/cover;color:white;text-align:center;padding:38px 18px 30px;position:relative;overflow:hidden}
+.hero-smoke{position:absolute;inset:0;background:url("images/smoke.gif") center/cover no-repeat;opacity:.18;pointer-events:none;z-index:1}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(255,120,20,.22),transparent 45%);animation:glow 5s infinite alternate ease-in-out;z-index:2}
 @keyframes glow{from{opacity:.35;transform:translateY(8px)}to{opacity:.75;transform:translateY(-8px)}}
 .hero-content{position:relative;z-index:3}
 .logo{width:118px;height:118px;object-fit:contain;border-radius:50%;background:white;padding:8px;box-shadow:0 8px 25px #0008}
@@ -61,9 +46,8 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
 <header class="hero">
   <div class="hero-smoke"></div>
   <div class="hero-glow"></div>
-
   <div class="hero-content">
-    <img src="images/logo.png" class="logo" alt="Cihangir Kebap Logo">
+    <img src="images/cihangir.png" class="logo">
     <h1>Cihangir Kebap</h1>
     <p>Gerçek Adana Lezzeti</p>
     <div class="badges">
@@ -79,7 +63,7 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
   <a href="#izgara">Izgaralar</a>
   <a href="#kiloluk">Kiloluk</a>
   <a href="#durum">Dürümler</a>
-  <a href="#pide">Lahmacun & Pideler</a>
+  <a href="#pide">Lahmacun & Pide</a>
   <a href="#calisan">Çalışan Menü</a>
   <a href="#icecek">İçecekler</a>
 </nav>
@@ -87,68 +71,38 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
 <section id="onecikan">
 <h2>Öne Çıkan Lezzetler</h2>
 <div class="note">Restoran içinde en çok tercih edilen lezzetler</div>
-
 <div class="grid">
-  <div class="card">
-    <span class="tag">En Çok Tercih Edilen</span>
-    <img src="images/adana.jpg" alt="Adana Kebap">
-    <div class="card-body">
-      <h3>Adana Kebap</h3>
-      <p class="desc">+6 çeşit meze ile servis edilir.</p>
-      <div class="price">390₺</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Şefin Tavsiyesi</span>
-    <img src="images/kaburga.jpg" alt="Kaburga Şiş">
-    <div class="card-body">
-      <h3>Kaburga Şiş</h3>
-      <p class="desc">+6 çeşit meze ile servis edilir.</p>
-      <div class="price">450₺</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <span class="tag">Premium</span>
-    <img src="images/special-sarma-beyti.jpg" alt="Special Sarma Beyti">
-    <div class="card-body">
-      <h3>Special Sarma Beyti</h3>
-      <p class="desc">+6 çeşit meze ile servis edilir.</p>
-      <div class="price">720₺</div>
-    </div>
-  </div>
+<div class="card"><span class="tag">En Çok Tercih Edilen</span><img src="images/adana.jpg"><div class="card-body"><h3>Adana Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">390₺</div></div></div>
+<div class="card"><span class="tag">Şefin Tavsiyesi</span><img src="images/kaburga.jpg"><div class="card-body"><h3>Kaburga Şiş</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">450₺</div></div></div>
+<div class="card"><span class="tag">Premium</span><img src="images/specialsarmabeyti.jpg"><div class="card-body"><h3>Special Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
 </div>
 </section>
 
 <section id="izgara">
 <h2>Izgaralar</h2>
 <div class="grid">
-
 <div class="card"><img src="images/adana.jpg"><div class="card-body"><h3>Adana Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">390₺</div></div></div>
 <div class="card"><img src="images/kaburga.jpg"><div class="card-body"><h3>Kaburga Şiş</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">450₺</div></div></div>
 <div class="card"><img src="images/ciger.jpg"><div class="card-body"><h3>Ciğer</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">470₺</div></div></div>
 <div class="card"><img src="images/kusbasi.jpg"><div class="card-body"><h3>Kuşbaşı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">440₺</div></div></div>
 <div class="card"><img src="images/pirzola.jpg"><div class="card-body"><h3>Pirzola</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/et-cop-sis.jpg"><div class="card-body"><h3>Et Çöp Şiş</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">440₺</div></div></div>
 <div class="card"><img src="images/beyti.jpg"><div class="card-body"><h3>Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/sarma-beyti.jpg"><div class="card-body"><h3>Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/special-sarma-beyti.jpg"><div class="card-body"><h3>Special Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
+<div class="card"><img src="images/sarmabeyti.jpg"><div class="card-body"><h3>Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
+<div class="card"><img src="images/specialsarmabeyti.jpg"><div class="card-body"><h3>Special Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
 <div class="card"><img src="images/kazbasi.jpg"><div class="card-body"><h3>Kazbaşı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
 <div class="card"><img src="images/kulbasti.jpg"><div class="card-body"><h3>Külbastı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/yagli-kara.jpg"><div class="card-body"><h3>Yağlı Kara</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/patlican-kebabi.jpg"><div class="card-body"><h3>Patlıcan Kebabı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
-<div class="card"><img src="images/tereyagli-lokum.jpg"><div class="card-body"><h3>Tereyağlı Lokum</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
-<div class="card"><img src="images/iki-yuzlu-kebap.jpg"><div class="card-body"><h3>İki Yüzlü Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
-<div class="card"><img src="images/tavuk.jpg"><div class="card-body"><h3>Kemiksiz Tavuk / Kanat</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">420₺</div></div></div>
-
+<div class="card"><img src="images/yaglikara.jpg"><div class="card-body"><h3>Yağlı Kara</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
+<div class="card"><img src="images/patlicankebabi.jpg"><div class="card-body"><h3>Patlıcan Kebabı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
+<div class="card"><img src="images/tereyagilokum.jpg"><div class="card-body"><h3>Tereyağlı Lokum</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
+<div class="card"><img src="images/ikiyuzlu.jpg"><div class="card-body"><h3>İki Yüzlü Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
+<div class="card"><img src="images/kemiksiztavuk.jpg"><div class="card-body"><h3>Kemiksiz Tavuk</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">420₺</div></div></div>
+<div class="card"><img src="images/kanat.jpg"><div class="card-body"><h3>Kanat</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">420₺</div></div></div>
 </div>
 </section>
 
 <section id="kiloluk">
 <h2>Kiloluk Ürünler</h2>
 <div class="grid">
-
 <div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Adana Kebap</h3><p>7 şiş 150GR + 6 çeşit meze</p><div class="price">1800₺</div></div></div>
 <div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Kaburga Şiş</h3><p>20 şiş + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
 <div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Ciğer</h3><p>30 şiş + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
@@ -166,7 +120,6 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
 <div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kanat</h3><p>3 şiş + 6 çeşit meze</p><div class="price">600₺</div></div></div>
 <div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kuşbaşı</h3><p>6 şiş + 6 çeşit meze</p><div class="price">1100₺</div></div></div>
 <div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Pirzola</h3><p>6 adet + 6 çeşit meze</p><div class="price">1100₺</div></div></div>
-
 </div>
 </section>
 
@@ -185,27 +138,27 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
 <section id="pide">
 <h2>Lahmacun & Pideler</h2>
 <div class="grid">
-<div class="card"><img src="images/adana-lahmacun.jpg"><div class="card-body"><h3>Adana Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/antep-lahmacun.jpg"><div class="card-body"><h3>Antep Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/findik-lahmacun.jpg"><div class="card-body"><h3>Fındık Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/karisik-pide.jpg"><div class="card-body"><h3>Karışık Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kasarli-pide.jpg"><div class="card-body"><h3>Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/adanalahmacun.jpg"><div class="card-body"><h3>Adana Lahmacun</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/anteplahmacun.jpg"><div class="card-body"><h3>Antep Lahmacun</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/findiklahmacun.jpg"><div class="card-body"><h3>Fındık Lahmacun</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/karisikpide.jpg"><div class="card-body"><h3>Karışık Pide</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/kasarlipide.jpg"><div class="card-body"><h3>Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
 <div class="card"><img src="images/kiymali-pide.jpg"><div class="card-body"><h3>Kıymalı Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kusbasili-pide.jpg"><div class="card-body"><h3>Kuşbaşılı Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kusbasili-kasarli-pide.jpg"><div class="card-body"><h3>Kuşbaşı Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/kusbasilipide.jpg"><div class="card-body"><h3>Kuşbaşılı Pide</h3><div class="price">330₺</div></div></div>
+<div class="card"><img src="images/kusbasi-kasarli-pide.jpg"><div class="card-body"><h3>Kuşbaşı Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
 </div>
 </section>
 
 <section id="calisan">
 <h2>Çalışan Menü</h2>
 <div class="card special">
-  <span class="tag">Ekonomik Menü</span>
-  <img src="images/calisan-menu.jpg" alt="Çalışan Menü">
-  <div class="card-body">
-    <h3>Çalışan Menü</h3>
-    <p class="desc">Adana Kebap + Kemiksiz Tavuk + 1 Lahmacun</p>
-    <div class="price">350₺</div>
-  </div>
+<span class="tag">Ekonomik Menü</span>
+<img src="images/calisanmenu.jpg">
+<div class="card-body">
+<h3>Çalışan Menü</h3>
+<p class="desc">Adana Kebap + Kemiksiz Tavuk + 1 Lahmacun</p>
+<div class="price">350₺</div>
+</div>
 </div>
 </section>
 
@@ -221,8 +174,8 @@ h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b1121
 </section>
 
 <div class="footer">
-  © 2026 Cihangir Kebap Osmaniye<br>
-  Gerçek Adana Lezzeti
+© 2026 Cihangir Kebap Osmaniye<br>
+Gerçek Adana Lezzeti
 </div>
 
 </body>
