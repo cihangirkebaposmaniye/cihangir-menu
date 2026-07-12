@@ -3,180 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cihangir Kebap Osmaniye</title>
+<title>Diyarbakır Cihangir Kebap</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5efe6;color:#21140f}
-.hero{min-height:340px;background:linear-gradient(rgba(20,8,3,.55),rgba(20,8,3,.88)),url("images/adana.jpg") center/cover;color:white;text-align:center;padding:38px 18px 30px;position:relative;overflow:hidden}
-.hero-smoke{position:absolute;inset:0;background:url("images/smoke.gif") center/cover no-repeat;opacity:.18;pointer-events:none;z-index:1}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(255,120,20,.22),transparent 45%);animation:glow 5s infinite alternate ease-in-out;z-index:2}
-@keyframes glow{from{opacity:.35;transform:translateY(8px)}to{opacity:.75;transform:translateY(-8px)}}
-.hero-content{position:relative;z-index:3}
-.logo{width:118px;height:118px;object-fit:contain;border-radius:50%;background:white;padding:8px;box-shadow:0 8px 25px #0008}
-h1{font-size:40px;margin:14px 0 4px;letter-spacing:.5px}
-.hero p{font-size:18px;margin:6px 0}
-.badges{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:18px}
-.badges span{background:rgba(177,18,23,.95);padding:9px 14px;border-radius:40px;font-weight:bold;font-size:14px}
-nav{position:sticky;top:0;z-index:20;background:#fffaf2;padding:13px 10px;white-space:nowrap;overflow-x:auto;box-shadow:0 4px 15px #0002}
-nav a{color:#21140f;text-decoration:none;margin:0 11px;font-weight:bold;font-size:14px}
-section{max-width:1150px;margin:auto;padding:28px 14px}
-h2{font-size:28px;margin:0 0 18px;padding-left:12px;border-left:6px solid #b11217}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:17px}
-.card{background:#fffdf8;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px #0002;position:relative;transition:.25s}
-.card:hover{transform:translateY(-3px)}
-.card img{width:100%;height:170px;object-fit:cover;display:block}
-.card-body{padding:15px}
-.card h3{margin:0 0 8px;font-size:21px}
-.desc{color:#6f5b4d;font-size:14px;min-height:20px}
-.price{color:#b11217;font-size:25px;font-weight:900;margin-top:10px}
-.tag{position:absolute;top:12px;left:12px;background:#d6a21e;color:white;padding:7px 11px;border-radius:22px;font-size:12px;font-weight:bold;z-index:3}
-.note{background:#fffdf8;border-radius:17px;padding:16px;text-align:center;margin-bottom:18px;font-weight:bold;box-shadow:0 5px 18px #0001}
-.kilo{border:1px solid #e3c277;background:#fff8e8}
-.special{background:linear-gradient(135deg,#26120d,#8d1117);color:white}
-.special .desc,.special .price{color:white}
-.footer{text-align:center;padding:28px 12px;background:#21140f;color:white;margin-top:20px}
-.small-title{font-size:13px;color:#8b6b4f;font-weight:bold;margin-bottom:7px}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+.hero{
+    min-height:70vh;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+    url('images/menu.png') center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.hero-content img{
+    width:140px;
+    background:white;
+    border-radius:50%;
+    padding:8px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#C79A52;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    background:#111;
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#C79A52;
+}
+
+.search{
+    max-width:800px;
+    margin:30px auto;
+    padding:0 15px;
+}
+
+.search input{
+    width:100%;
+    padding:16px;
+    border-radius:50px;
+    border:none;
+    background:#1b1b1b;
+    color:white;
+    font-size:16px;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+.section-title{
+    margin:40px 0 20px;
+    color:#C79A52;
+    border-left:5px solid #C79A52;
+    padding-left:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#171717;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+    cursor:pointer;
+    border:1px solid rgba(199,154,82,.2);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#bbb;
+    font-size:14px;
+}
+
+.price{
+    margin-top:15px;
+    color:#C79A52;
+    font-size:28px;
+    font-weight:700;
+}
+
+.floating{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.float-btn{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#C79A52;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:26px;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal-content{
+    width:90%;
+    max-width:500px;
+    background:#171717;
+    border-radius:20px;
+    padding:25px;
+    border:1px solid #C79A52;
+}
+
+.close{
+    float:right;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    padding:40px;
+    margin-top:50px;
+    background:#111;
+}
 </style>
 </head>
 
 <body>
 
 <header class="hero">
-  <div class="hero-smoke"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <img src="images/cihangir.png" class="logo">
-    <h1>Cihangir Kebap</h1>
-    <p>Gerçek Adana Lezzeti</p>
-    <div class="badges">
-      <span>🔥 6 Çeşit Meze Dahil</span>
-      <span>👨‍🍳 Şefin Tavsiyesi</span>
-      <span>🥩 Günlük Taze Lezzet</span>
-    </div>
-  </div>
+<div class="hero-content">
+<img src="cihangir.png">
+<h1>Diyarbakır Cihangir Kebap</h1>
+<p>Zırh ustalarının elinden geleneksel Diyarbakır lezzeti.</p>
+</div>
 </header>
 
 <nav>
-  <a href="#onecikan">Öne Çıkanlar</a>
-  <a href="#izgara">Izgaralar</a>
-  <a href="#kiloluk">Kiloluk</a>
-  <a href="#durum">Dürümler</a>
-  <a href="#pide">Lahmacun & Pide</a>
-  <a href="#calisan">Çalışan Menü</a>
-  <a href="#icecek">İçecekler</a>
+<a href="#izgara">Izgaralar</a>
+<a href="#durum">Dürümler</a>
+<a href="#icecek">İçecekler</a>
 </nav>
 
-<section id="onecikan">
-<h2>Öne Çıkan Lezzetler</h2>
-<div class="note">Restoran içinde en çok tercih edilen lezzetler</div>
+<div class="search">
+<input type="text" id="searchInput" placeholder="Menüde ara...">
+</div>
+
+<div class="container">
+
+<h2 class="section-title" id="izgara">Izgaralar</h2>
+
 <div class="grid">
-<div class="card"><span class="tag">En Çok Tercih Edilen</span><img src="images/adana.jpg"><div class="card-body"><h3>Adana Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">390₺</div></div></div>
-<div class="card"><span class="tag">Şefin Tavsiyesi</span><img src="images/kaburga.jpg"><div class="card-body"><h3>Kaburga Şiş</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">450₺</div></div></div>
-<div class="card"><span class="tag">Premium</span><img src="images/specialsarmabeyti.jpg"><div class="card-body"><h3>Special Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
-</div>
-</section>
 
-<section id="izgara">
-<h2>Izgaralar</h2>
-<div class="grid">
-<div class="card"><img src="images/adana.jpg"><div class="card-body"><h3>Adana Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">390₺</div></div></div>
-<div class="card"><img src="images/kaburga.jpg"><div class="card-body"><h3>Kaburga Şiş</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">450₺</div></div></div>
-<div class="card"><img src="images/ciger.jpg"><div class="card-body"><h3>Ciğer</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">470₺</div></div></div>
-<div class="card"><img src="images/kusbasi.jpg"><div class="card-body"><h3>Kuşbaşı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">440₺</div></div></div>
-<div class="card"><img src="images/pirzola.jpg"><div class="card-body"><h3>Pirzola</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/beyti.jpg"><div class="card-body"><h3>Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/sarmabeyti.jpg"><div class="card-body"><h3>Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/specialsarmabeyti.jpg"><div class="card-body"><h3>Special Sarma Beyti</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
-<div class="card"><img src="images/kazbasi.jpg"><div class="card-body"><h3>Kazbaşı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/kulbasti.jpg"><div class="card-body"><h3>Külbastı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/yaglikara.jpg"><div class="card-body"><h3>Yağlı Kara</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">600₺</div></div></div>
-<div class="card"><img src="images/patlicankebabi.jpg"><div class="card-body"><h3>Patlıcan Kebabı</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
-<div class="card"><img src="images/tereyaglilokum.jpg"><div class="card-body"><h3>Tereyağlı Lokum</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">650₺</div></div></div>
-<div class="card"><img src="images/iki-yuzlu.jpg"><div class="card-body"><h3>İki Yüzlü Kebap</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">720₺</div></div></div>
-<div class="card"><img src="images/kemiksiztavuk.jpg"><div class="card-body"><h3>Kemiksiz Tavuk</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">420₺</div></div></div>
-<div class="card"><img src="images/kanat.jpg"><div class="card-body"><h3>Kanat</h3><p class="desc">+6 çeşit meze ile servis edilir.</p><div class="price">420₺</div></div></div>
+<div class="card" onclick="showProduct('Adana Kebap','6 çeşit meze ve köz sebze ile servis edilir.','390₺')">
+<img src="images/adana.jpg">
+<div class="card-content">
+<h3>Adana Kebap</h3>
+<p>6 çeşit meze ile servis edilir.</p>
+<div class="price">390₺</div>
 </div>
-</section>
+</div>
 
-<section id="kiloluk">
-<h2>Kiloluk Ürünler</h2>
-<div class="grid">
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Adana Kebap</h3><p>7 şiş 150GR + 6 çeşit meze</p><div class="price">1800₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Kaburga Şiş</h3><p>20 şiş + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Ciğer</h3><p>30 şiş + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Kemiksiz Tavuk</h3><p>6 şiş + 6 çeşit meze</p><div class="price">950₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Kanat</h3><p>6 şiş + 6 çeşit meze</p><div class="price">950₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Pirzola</h3><p>12 adet + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Kuşbaşı</h3><p>12 şiş + 6 çeşit meze</p><div class="price">2000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">1 KG</div><h3>Adana Lahmacun</h3><p>50 adet + 6 çeşit meze</p><div class="price">1650₺</div></div></div>
+<div class="card" onclick="showProduct('Kaburga Şiş','Özel marine edilmiş kaburga eti.','450₺')">
+<img src="images/kaburga.jpg">
+<div class="card-content">
+<h3>Kaburga Şiş</h3>
+<p>Özel marine edilmiş et.</p>
+<div class="price">450₺</div>
+</div>
+</div>
 
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Adana Kebap</h3><p>4 şiş 150GR + 6 çeşit meze</p><div class="price">1000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Adana Lahmacun</h3><p>25 adet + 6 çeşit meze</p><div class="price">1000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kaburga Şiş</h3><p>10 şiş + 6 çeşit meze</p><div class="price">1000₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Ciğer</h3><p>15 şiş + 6 çeşit meze</p><div class="price">1100₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kemiksiz Tavuk</h3><p>3 şiş + 6 çeşit meze</p><div class="price">600₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kanat</h3><p>3 şiş + 6 çeşit meze</p><div class="price">600₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Kuşbaşı</h3><p>6 şiş + 6 çeşit meze</p><div class="price">1100₺</div></div></div>
-<div class="card kilo"><div class="card-body"><div class="small-title">Yarım KG</div><h3>Pirzola</h3><p>6 adet + 6 çeşit meze</p><div class="price">1100₺</div></div></div>
+<div class="card" onclick="showProduct('Ciğer Şiş','Diyarbakır usulü ciğer şiş.','420₺')">
+<img src="images/ciger.jpg">
+<div class="card-content">
+<h3>Ciğer Şiş</h3>
+<p>Diyarbakır usulü hazırlanır.</p>
+<div class="price">420₺</div>
 </div>
-</section>
+</div>
 
-<section id="durum">
-<h2>Dürümler</h2>
-<div class="grid">
-<div class="card"><div class="card-body"><h3>Tavuk Dürüm</h3><div class="price">275₺</div></div></div>
-<div class="card"><div class="card-body"><h3>Adana Dürüm</h3><div class="price">275₺</div></div></div>
-<div class="card"><div class="card-body"><h3>Kuşbaşı Dürüm</h3><div class="price">300₺</div></div></div>
-<div class="card"><div class="card-body"><h3>Ciğer Dürüm</h3><div class="price">300₺</div></div></div>
-<div class="card"><div class="card-body"><h3>Et Çöp Şiş Dürüm</h3><div class="price">300₺</div></div></div>
-<div class="card"><div class="card-body"><h3>Kaburga Şiş Dürüm</h3><div class="price">300₺</div></div></div>
 </div>
-</section>
 
-<section id="pide">
-<h2>Lahmacun & Pideler</h2>
-<div class="grid">
-<div class="card"><img src="images/adanalahmacun.jpg"><div class="card-body"><h3>Adana Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/anteplahmacun.jpg"><div class="card-body"><h3>Antep Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/findiklahmacun.jpg"><div class="card-body"><h3>Fındık Lahmacun</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/karisikpide.jpg"><div class="card-body"><h3>Karışık Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kasarlipide.jpg"><div class="card-body"><h3>Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kiymalipide.jpg"><div class="card-body"><h3>Kıymalı Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kusbasilipide.jpg"><div class="card-body"><h3>Kuşbaşılı Pide</h3><div class="price">330₺</div></div></div>
-<div class="card"><img src="images/kusbasi-kasarli-pide.jpg"><div class="card-body"><h3>Kuşbaşı Kaşarlı Pide</h3><div class="price">330₺</div></div></div>
 </div>
-</section>
-
-<section id="calisan">
-<h2>Çalışan Menü</h2>
-<div class="card special">
-<span class="tag">Ekonomik Menü</span>
-<img src="images/calisanmenu.jpg">
-<div class="card-body">
-<h3>Çalışan Menü</h3>
-<p class="desc">Adana Kebap + Kemiksiz Tavuk + 1 Lahmacun</p>
-<div class="price">350₺</div>
-</div>
-</div>
-</section>
-
-<section id="icecek">
-<h2>İçecekler</h2>
-<div class="grid">
-<div class="card"><img src="images/icecek.jpg"><div class="card-body"><h3>Açık Ayran</h3><div class="price">50₺</div></div></div>
-<div class="card"><img src="images/icecek.jpg"><div class="card-body"><h3>Kapalı Ayran</h3><div class="price">50₺</div></div></div>
-<div class="card"><img src="images/icecek.jpg"><div class="card-body"><h3>Açık Şalgam</h3><div class="price">50₺</div></div></div>
-<div class="card"><img src="images/icecek.jpg"><div class="card-body"><h3>Kapalı Şalgam</h3><div class="price">50₺</div></div></div>
-<div class="card"><img src="images/icecek.jpg"><div class="card-body"><h3>Kutu Kola</h3><div class="price">70₺</div></div></div>
-</div>
-</section>
 
 <div class="footer">
-© 2026 Cihangir Kebap Osmaniye<br>
-Gerçek Adana Lezzeti
+📍 Diyarbakır<br>
+📞 0555 024 08 80<br><br>
+© 2026 Diyarbakır Cihangir Kebap
 </div>
+
+<div class="floating">
+<a href="tel:05550240880" class="float-btn">📞</a>
+<a href="https://wa.me/905550240880" class="float-btn">💬</a>
+</div>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">&times;</span>
+<h2 id="modalTitle"></h2>
+<p id="modalDesc"></p>
+<h3 id="modalPrice" style="color:#C79A52;margin-top:15px;"></h3>
+</div>
+</div>
+
+<script>
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(value)
+? "block"
+: "none";
+});
+});
+
+function showProduct(title,desc,price){
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalDesc").innerText=desc;
+document.getElementById("modalPrice").innerText=price;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+if(e.target.id==="modal"){
+closeModal();
+}
+}
+</script>
 
 </body>
 </html>
