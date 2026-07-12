@@ -5,23 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diyarbakır Cihangir Kebap | Dijital Menü</title>
-<meta name="description" content="Diyarbakır Cihangir Kebap dijital menüsü. Izgaralar, dürümler, lahmacunlar ve kiloluk servisler.">
+
+<meta
+    name="description"
+    content="Diyarbakır Cihangir Kebap dijital menüsü. Izgaralar, dürümler, kiloluk servisler ve içecekler.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
 <style>
 :root{
     --bg:#090909;
     --bg-soft:#11100e;
     --card:#171512;
-    --card-2:#201c17;
     --gold:#d2a95f;
     --gold-light:#f0d18f;
     --cream:#f7f1e7;
     --muted:#b9b0a3;
-    --red:#8e1c1c;
     --border:rgba(210,169,95,.25);
     --shadow:0 18px 45px rgba(0,0,0,.42);
 }
@@ -34,16 +38,24 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:140px;
+    scroll-padding-top:145px;
 }
 
 body{
     font-family:"Montserrat",Arial,sans-serif;
     background:
-        radial-gradient(circle at top right,rgba(210,169,95,.08),transparent 28%),
+        radial-gradient(
+            circle at top right,
+            rgba(210,169,95,.08),
+            transparent 28%
+        ),
         var(--bg);
     color:var(--cream);
     overflow-x:hidden;
+}
+
+body.modal-open{
+    overflow:hidden;
 }
 
 button,
@@ -59,6 +71,8 @@ img{
     max-width:100%;
 }
 
+/* HERO */
+
 .hero{
     min-height:82vh;
     position:relative;
@@ -68,7 +82,11 @@ img{
     text-align:center;
     padding:70px 20px 55px;
     background:
-        linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.92)),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.42),
+            rgba(0,0,0,.92)
+        ),
         url("images/adana.jpg") center/cover no-repeat;
     overflow:hidden;
 }
@@ -78,8 +96,18 @@ img{
     position:absolute;
     inset:0;
     background:
-        radial-gradient(circle at 50% 85%,rgba(213,98,25,.25),transparent 38%),
-        linear-gradient(90deg,rgba(0,0,0,.65),transparent 38%,transparent 62%,rgba(0,0,0,.65));
+        radial-gradient(
+            circle at 50% 85%,
+            rgba(213,98,25,.25),
+            transparent 38%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.65),
+            transparent 38%,
+            transparent 62%,
+            rgba(0,0,0,.65)
+        );
 }
 
 .hero::after{
@@ -113,6 +141,7 @@ img{
         opacity:0;
         transform:translateY(28px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -207,7 +236,11 @@ img{
 }
 
 .hero-button.primary{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
     color:#17110a;
     box-shadow:0 10px 30px rgba(210,169,95,.25);
 }
@@ -241,6 +274,8 @@ img{
     font-size:12px;
     font-weight:700;
 }
+
+/* SABİT MENÜ */
 
 .sticky-area{
     position:sticky;
@@ -282,6 +317,8 @@ img{
     color:#17110a;
     background:var(--gold);
 }
+
+/* ARAMA VE FİLTRE */
 
 .controls{
     max-width:1280px;
@@ -351,6 +388,10 @@ img{
     scrollbar-width:none;
 }
 
+.filter-panel::-webkit-scrollbar{
+    display:none;
+}
+
 .filter-panel.open{
     display:flex;
 }
@@ -372,6 +413,8 @@ img{
     color:#17110a;
     border-color:var(--gold);
 }
+
+/* İÇERİK */
 
 main{
     max-width:1280px;
@@ -430,7 +473,11 @@ main{
     width:43px;
     height:43px;
     border-radius:14px;
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
     color:#191209;
     display:grid;
     place-items:center;
@@ -458,6 +505,8 @@ main{
     white-space:nowrap;
 }
 
+/* ÜRÜN KARTLARI */
+
 .product-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
@@ -470,7 +519,11 @@ main{
     border-radius:23px;
     overflow:hidden;
     background:
-        linear-gradient(145deg,rgba(255,255,255,.025),transparent),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            transparent
+        ),
         var(--card);
     border:1px solid var(--border);
     box-shadow:0 10px 32px rgba(0,0,0,.24);
@@ -478,7 +531,8 @@ main{
     transition:
         transform .32s ease,
         box-shadow .32s ease,
-        border-color .32s ease;
+        border-color .32s ease,
+        opacity .35s ease;
     opacity:0;
     transform:translateY(24px);
 }
@@ -515,7 +569,10 @@ main{
 .image-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(transparent 48%,rgba(0,0,0,.78));
+    background:linear-gradient(
+        transparent 48%,
+        rgba(0,0,0,.78)
+    );
     pointer-events:none;
 }
 
@@ -526,7 +583,11 @@ main{
     z-index:2;
     padding:7px 11px;
     border-radius:999px;
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
     color:#17110a;
     font-size:10px;
     font-weight:900;
@@ -595,8 +656,16 @@ main{
     justify-content:space-between;
     padding:20px;
     background:
-        radial-gradient(circle at top right,rgba(210,169,95,.12),transparent 40%),
+        radial-gradient(
+            circle at top right,
+            rgba(210,169,95,.12),
+            transparent 40%
+        ),
         var(--card);
+}
+
+.text-card .product-body{
+    padding:0;
 }
 
 .text-card .product-description{
@@ -613,12 +682,6 @@ main{
     font-weight:900;
     letter-spacing:1px;
     margin-bottom:13px;
-}
-
-.special-card{
-    background:
-        radial-gradient(circle at right top,rgba(210,169,95,.20),transparent 42%),
-        linear-gradient(145deg,#25140f,#491313);
 }
 
 .no-results{
@@ -638,13 +701,19 @@ main{
     margin-bottom:7px;
 }
 
+/* İLETİŞİM */
+
 .contact-section{
     margin-top:65px;
     border:1px solid var(--border);
     border-radius:27px;
     overflow:hidden;
     background:
-        radial-gradient(circle at top right,rgba(210,169,95,.13),transparent 34%),
+        radial-gradient(
+            circle at top right,
+            rgba(210,169,95,.13),
+            transparent 34%
+        ),
         var(--bg-soft);
 }
 
@@ -710,6 +779,8 @@ footer strong{
     margin-bottom:6px;
 }
 
+/* SABİT BUTONLAR */
+
 .floating-actions{
     position:fixed;
     right:17px;
@@ -737,7 +808,11 @@ footer strong{
 }
 
 .float-button.phone{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
     color:#17110a;
 }
 
@@ -745,6 +820,8 @@ footer strong{
     background:#25d366;
     color:#fff;
 }
+
+/* ÜRÜN DETAY MODALI */
 
 .modal{
     display:none;
@@ -779,6 +856,7 @@ footer strong{
         opacity:0;
         transform:translateY(20px) scale(.97);
     }
+
     to{
         opacity:1;
         transform:translateY(0) scale(1);
@@ -865,17 +943,25 @@ footer strong{
     margin-top:20px;
     border:none;
     border-radius:999px;
-    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    background:linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
     color:#17110a;
     font-weight:900;
     cursor:pointer;
 }
+
+/* TABLET */
 
 @media(max-width:920px){
     .product-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
     }
 }
+
+/* MOBİL */
 
 @media(max-width:650px){
     .hero{
@@ -921,7 +1007,7 @@ footer strong{
         gap:13px;
     }
 
-    .product-card{
+    .product-card:not(.text-card){
         display:grid;
         grid-template-columns:122px minmax(0,1fr);
         min-height:146px;
@@ -955,7 +1041,6 @@ footer strong{
     }
 
     .text-card{
-        display:flex;
         min-height:165px;
         padding:18px;
     }
@@ -993,10 +1078,14 @@ footer strong{
 
     <div class="hero-content">
         <div class="logo-frame">
-            <img src="images/cihangir.png" alt="Diyarbakır Cihangir Kebap logosu">
+            <img
+                src="cihangir.png"
+                alt="Diyarbakır Cihangir Kebap logosu">
         </div>
 
-        <div class="eyebrow">Geleneksel ocakbaşı</div>
+        <div class="eyebrow">
+            Geleneksel Ocakbaşı
+        </div>
 
         <h1>
             Diyarbakır
@@ -1004,32 +1093,59 @@ footer strong{
         </h1>
 
         <p class="hero-description">
-            Zırh ustalarının elinden, günlük taze et ve köz ateşiyle hazırlanan
-            geleneksel kebap lezzetleri.
+            Zırh ustalarının elinden, günlük taze et ve köz ateşiyle
+            hazırlanan geleneksel kebap lezzetleri.
         </p>
 
         <div class="hero-actions">
-            <a href="#menu" class="hero-button primary">Menüyü Keşfet</a>
-            <a href="tel:+905550240880" class="hero-button secondary">0555 024 08 80</a>
+            <a href="#menu" class="hero-button primary">
+                Menüyü Keşfet
+            </a>
+
+            <a
+                href="tel:+905550240880"
+                class="hero-button secondary">
+                0555 024 08 80
+            </a>
         </div>
 
         <div class="hero-badges">
-            <span class="hero-badge">🔥 Köz Ateşi</span>
-            <span class="hero-badge">🥩 Günlük Taze Et</span>
-            <span class="hero-badge">🥗 6 Çeşit Meze</span>
+            <span class="hero-badge">
+                🔥 Köz Ateşi
+            </span>
+
+            <span class="hero-badge">
+                🥩 Günlük Taze Et
+            </span>
+
+            <span class="hero-badge">
+                🥗 6 Çeşit Meze
+            </span>
         </div>
     </div>
 </header>
 
 <div class="sticky-area">
     <nav class="quick-nav" aria-label="Menü kategorileri">
-        <a href="#onecikan">⭐ Öne Çıkanlar</a>
-        <a href="#izgara">🔥 Izgaralar</a>
-        <a href="#kiloluk">⚖️ Kiloluk</a>
-        <a href="#durum">🌯 Dürümler</a>
-        <a href="#lahmacun">🫓 Lahmacun</a>
-        <a href="#calisan">👨‍🍳 Çalışan Menü</a>
-        <a href="#icecek">🥤 İçecekler</a>
+        <a href="#onecikan">
+            ⭐ Öne Çıkanlar
+        </a>
+
+        <a href="#izgara">
+            🔥 Izgaralar
+        </a>
+
+        <a href="#kiloluk">
+            ⚖️ Kiloluk
+        </a>
+
+        <a href="#durum">
+            🌯 Dürümler
+        </a>
+
+        <a href="#icecek">
+            🥤 İçecekler
+        </a>
     </nav>
 
     <div class="controls">
@@ -1047,30 +1163,67 @@ footer strong{
                 aria-label="Menüde ürün ara">
         </div>
 
-        <button class="filter-button" id="filterToggle" type="button">
+        <button
+            class="filter-button"
+            id="filterToggle"
+            type="button">
             Kategoriler
         </button>
     </div>
 
     <div class="filter-panel" id="filterPanel">
-        <button class="filter-chip active" data-filter="all">Tümü</button>
-        <button class="filter-chip" data-filter="onecikan">Öne Çıkanlar</button>
-        <button class="filter-chip" data-filter="izgara">Izgaralar</button>
-        <button class="filter-chip" data-filter="kiloluk">Kiloluk</button>
-        <button class="filter-chip" data-filter="durum">Dürümler</button>
-        <button class="filter-chip" data-filter="lahmacun">Lahmacun</button>
-        <button class="filter-chip" data-filter="calisan">Çalışan Menü</button>
-        <button class="filter-chip" data-filter="icecek">İçecekler</button>
+        <button
+            class="filter-chip active"
+            data-filter="all">
+            Tümü
+        </button>
+
+        <button
+            class="filter-chip"
+            data-filter="onecikan">
+            Öne Çıkanlar
+        </button>
+
+        <button
+            class="filter-chip"
+            data-filter="izgara">
+            Izgaralar
+        </button>
+
+        <button
+            class="filter-chip"
+            data-filter="kiloluk">
+            Kiloluk
+        </button>
+
+        <button
+            class="filter-chip"
+            data-filter="durum">
+            Dürümler
+        </button>
+
+        <button
+            class="filter-chip"
+            data-filter="icecek">
+            İçecekler
+        </button>
     </div>
 </div>
 
 <main id="menu">
     <div class="intro">
-        <div class="intro-kicker">Dijital menü</div>
-        <h2>Ocaktan Sofraya</h2>
+        <div class="intro-kicker">
+            Dijital Menü
+        </div>
+
+        <h2>
+            Ocaktan Sofraya
+        </h2>
+
         <p>
             Ürün kartına dokunarak detayları görüntüleyebilir,
-            arama ve kategori filtreleriyle menüyü kolayca inceleyebilirsiniz.
+            arama ve kategori filtreleriyle menüyü kolayca
+            inceleyebilirsiniz.
         </p>
     </div>
 
@@ -1083,11 +1236,18 @@ footer strong{
 
     <section class="contact-section">
         <div class="contact-inner">
-            <h2>Diyarbakır Cihangir Kebap</h2>
-            <p>Sipariş, bilgi ve rezervasyon için bize ulaşabilirsiniz.</p>
+            <h2>
+                Diyarbakır Cihangir Kebap
+            </h2>
+
+            <p>
+                Sipariş, bilgi ve rezervasyon için bize ulaşabilirsiniz.
+            </p>
 
             <div class="contact-actions">
-                <a class="contact-link gold" href="tel:+905550240880">
+                <a
+                    class="contact-link gold"
+                    href="tel:+905550240880">
                     📞 Hemen Ara
                 </a>
 
@@ -1105,8 +1265,10 @@ footer strong{
 
 <footer>
     <strong>Diyarbakır Cihangir Kebap</strong>
+
     📍 Diyarbakır<br>
     📞 0555 024 08 80<br><br>
+
     © 2026 Tüm hakları saklıdır.
 </footer>
 
@@ -1128,27 +1290,68 @@ footer strong{
     </a>
 </div>
 
-<div class="modal" id="productModal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <button class="modal-close" id="modalClose" type="button" aria-label="Kapat">
+<div
+    class="modal"
+    id="productModal"
+    aria-hidden="true">
+
+    <div
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Kapat">
             ×
         </button>
 
-        <div class="modal-image-wrap" id="modalImageWrap">
-            <img class="modal-image" id="modalImage" src="" alt="">
+        <div
+            class="modal-image-wrap"
+            id="modalImageWrap">
+
+            <img
+                class="modal-image"
+                id="modalImage"
+                src=""
+                alt="">
         </div>
 
         <div class="modal-body">
-            <div class="modal-label" id="modalCategory"></div>
-            <h2 class="modal-title" id="modalTitle"></h2>
-            <p class="modal-description" id="modalDescription"></p>
-
-            <div class="modal-info">
-                <div class="modal-service" id="modalService"></div>
-                <div class="modal-price" id="modalPrice"></div>
+            <div
+                class="modal-label"
+                id="modalCategory">
             </div>
 
-            <button class="modal-action" id="modalCallButton" type="button">
+            <h2
+                class="modal-title"
+                id="modalTitle">
+            </h2>
+
+            <p
+                class="modal-description"
+                id="modalDescription">
+            </p>
+
+            <div class="modal-info">
+                <div
+                    class="modal-service"
+                    id="modalService">
+                </div>
+
+                <div
+                    class="modal-price"
+                    id="modalPrice">
+                </div>
+            </div>
+
+            <button
+                class="modal-action"
+                id="modalCallButton"
+                type="button">
                 Telefonla Bilgi Al
             </button>
         </div>
@@ -1158,46 +1361,34 @@ footer strong{
 <script>
 const menuSections = [
     {
-        id: "onecikan",
-        title: "Öne Çıkan Lezzetler",
-        subtitle: "Misafirlerimizin en çok tercih ettiği ürünler",
-        icon: "⭐"
+        id:"onecikan",
+        title:"Öne Çıkan Lezzetler",
+        subtitle:"Misafirlerimizin en çok tercih ettiği ürünler",
+        icon:"⭐"
     },
     {
-        id: "izgara",
-        title: "Izgaralar",
-        subtitle: "Köz ateşinde günlük olarak hazırlanır",
-        icon: "🔥"
+        id:"izgara",
+        title:"Izgaralar",
+        subtitle:"Köz ateşinde günlük olarak hazırlanır",
+        icon:"🔥"
     },
     {
-        id: "kiloluk",
-        title: "Kiloluk Servisler",
-        subtitle: "Kalabalık sofralar ve özel siparişler için",
-        icon: "⚖️"
+        id:"kiloluk",
+        title:"Kiloluk Servisler",
+        subtitle:"Kalabalık sofralar ve özel siparişler için",
+        icon:"⚖️"
     },
     {
-        id: "durum",
-        title: "Dürümler",
-        subtitle: "Taze lavaşla hazırlanan doyurucu lezzetler",
-        icon: "🌯"
+        id:"durum",
+        title:"Dürümler",
+        subtitle:"Taze lavaşla hazırlanan doyurucu lezzetler",
+        icon:"🌯"
     },
     {
-        id: "lahmacun",
-        title: "Lahmacunlar",
-        subtitle: "Taş fırından sıcak ve çıtır",
-        icon: "🫓"
-    },
-    {
-        id: "calisan",
-        title: "Çalışan Menüsü",
-        subtitle: "Doyurucu ve avantajlı menü seçeneği",
-        icon: "👨‍🍳"
-    },
-    {
-        id: "icecek",
-        title: "İçecekler",
-        subtitle: "Yemeğinize eşlik eden ferah seçenekler",
-        icon: "🥤"
+        id:"icecek",
+        title:"İçecekler",
+        subtitle:"Yemeğinize eşlik eden ferah seçenekler",
+        icon:"🥤"
     }
 ];
 
@@ -1417,27 +1608,12 @@ const products = [
         service:"6 çeşit meze dahildir.",
         price:"2000₺"
     },
-    {
-        category:"kiloluk",
-        title:"Adana Lahmacun",
-        weight:"1 KG",
-        description:"50 adet Adana lahmacun.",
-        service:"6 çeşit meze dahildir.",
-        price:"1650₺"
-    },
+
     {
         category:"kiloluk",
         title:"Adana Kebap",
         weight:"YARIM KG",
         description:"4 şiş, her biri 150 gram.",
-        service:"6 çeşit meze dahildir.",
-        price:"1000₺"
-    },
-    {
-        category:"kiloluk",
-        title:"Adana Lahmacun",
-        weight:"YARIM KG",
-        description:"25 adet Adana lahmacun.",
         service:"6 çeşit meze dahildir.",
         price:"1000₺"
     },
@@ -1536,42 +1712,6 @@ const products = [
     },
 
     {
-        category:"lahmacun",
-        title:"Adana Lahmacun",
-        description:"İnce hamur üzerinde özel harçla taş fırında pişirilir.",
-        service:"Yeşillik ve limonla servis edilir.",
-        price:"330₺",
-        image:"images/adanalahmacun.jpg"
-    },
-    {
-        category:"lahmacun",
-        title:"Antep Lahmacun",
-        description:"Geleneksel Antep usulü harçla taş fırında pişirilir.",
-        service:"Yeşillik ve limonla servis edilir.",
-        price:"330₺",
-        image:"images/anteplahmacun.jpg"
-    },
-    {
-        category:"lahmacun",
-        title:"Fındık Lahmacun",
-        description:"Küçük boy, ince ve çıtır lahmacun servisi.",
-        service:"Yeşillik ve limonla servis edilir.",
-        price:"330₺",
-        image:"images/findiklahmacun.jpg"
-    },
-
-    {
-        category:"calisan",
-        title:"Çalışan Menü",
-        description:"Adana Kebap + Kemiksiz Tavuk + 1 Lahmacun.",
-        service:"Avantajlı ve doyurucu menü.",
-        price:"350₺",
-        image:"images/calisanmenu.jpg",
-        tag:"Ekonomik Menü",
-        special:true
-    },
-
-    {
         category:"icecek",
         title:"Açık Ayran",
         description:"Soğuk ve ferah açık ayran.",
@@ -1613,12 +1753,23 @@ const products = [
     }
 ];
 
-const sectionsContainer = document.getElementById("sectionsContainer");
-const searchInput = document.getElementById("searchInput");
-const noResults = document.getElementById("noResults");
-const filterToggle = document.getElementById("filterToggle");
-const filterPanel = document.getElementById("filterPanel");
-const filterChips = document.querySelectorAll(".filter-chip");
+const sectionsContainer =
+    document.getElementById("sectionsContainer");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const noResults =
+    document.getElementById("noResults");
+
+const filterToggle =
+    document.getElementById("filterToggle");
+
+const filterPanel =
+    document.getElementById("filterPanel");
+
+const filterChips =
+    document.querySelectorAll(".filter-chip");
 
 let activeFilter = "all";
 
@@ -1634,19 +1785,21 @@ function normalizeText(text){
 }
 
 function productMatches(product){
-    const query = normalizeText(searchInput.value.trim());
+    const query =
+        normalizeText(searchInput.value.trim());
 
     const categoryMatch =
         activeFilter === "all" ||
         product.category === activeFilter;
 
-    const searchSource = normalizeText(
-        product.title + " " +
-        product.description + " " +
-        product.service + " " +
-        (product.weight || "") + " " +
-        (product.tag || "")
-    );
+    const searchSource =
+        normalizeText(
+            product.title + " " +
+            product.description + " " +
+            product.service + " " +
+            (product.weight || "") + " " +
+            (product.tag || "")
+        );
 
     const queryMatch =
         query === "" ||
@@ -1656,27 +1809,49 @@ function productMatches(product){
 }
 
 function createProductCard(product){
-    const card = document.createElement("article");
+    const card =
+        document.createElement("article");
 
     card.className =
         "product-card" +
-        (product.special ? " special-card" : "") +
         (!product.image ? " text-card" : "");
 
-    card.dataset.category = product.category;
+    card.dataset.category =
+        product.category;
+
     card.tabIndex = 0;
-    card.setAttribute("role","button");
-    card.setAttribute("aria-label",product.title + " detaylarını aç");
+
+    card.setAttribute(
+        "role",
+        "button"
+    );
+
+    card.setAttribute(
+        "aria-label",
+        product.title + " detaylarını aç"
+    );
 
     if(product.image){
-        const imageWrap = document.createElement("div");
-        imageWrap.className = "product-image-wrap";
+        const imageWrap =
+            document.createElement("div");
 
-        const image = document.createElement("img");
-        image.className = "product-image";
-        image.src = product.image;
-        image.alt = product.title;
-        image.loading = "lazy";
+        imageWrap.className =
+            "product-image-wrap";
+
+        const image =
+            document.createElement("img");
+
+        image.className =
+            "product-image";
+
+        image.src =
+            product.image;
+
+        image.alt =
+            product.title;
+
+        image.loading =
+            "lazy";
 
         image.onerror = function(){
             imageWrap.style.display = "none";
@@ -1685,58 +1860,108 @@ function createProductCard(product){
 
         imageWrap.appendChild(image);
 
-        const overlay = document.createElement("div");
-        overlay.className = "image-overlay";
+        const overlay =
+            document.createElement("div");
+
+        overlay.className =
+            "image-overlay";
+
         imageWrap.appendChild(overlay);
 
         if(product.tag){
-            const tag = document.createElement("span");
-            tag.className = "product-tag";
-            tag.textContent = product.tag;
+            const tag =
+                document.createElement("span");
+
+            tag.className =
+                "product-tag";
+
+            tag.textContent =
+                product.tag;
+
             imageWrap.appendChild(tag);
         }
 
         card.appendChild(imageWrap);
     }
 
-    const body = document.createElement("div");
-    body.className = "product-body";
+    const body =
+        document.createElement("div");
+
+    body.className =
+        "product-body";
 
     if(product.weight){
-        const weight = document.createElement("span");
-        weight.className = "weight-label";
-        weight.textContent = product.weight;
+        const weight =
+            document.createElement("span");
+
+        weight.className =
+            "weight-label";
+
+        weight.textContent =
+            product.weight;
+
         body.appendChild(weight);
     }
 
-    const top = document.createElement("div");
-    top.className = "product-top";
+    const top =
+        document.createElement("div");
 
-    const title = document.createElement("h3");
-    title.className = "product-title";
-    title.textContent = product.title;
+    top.className =
+        "product-top";
 
-    const price = document.createElement("div");
-    price.className = "product-price";
-    price.textContent = product.price;
+    const title =
+        document.createElement("h3");
+
+    title.className =
+        "product-title";
+
+    title.textContent =
+        product.title;
+
+    const price =
+        document.createElement("div");
+
+    price.className =
+        "product-price";
+
+    price.textContent =
+        product.price;
 
     top.appendChild(title);
     top.appendChild(price);
 
-    const description = document.createElement("p");
-    description.className = "product-description";
-    description.textContent = product.description;
+    const description =
+        document.createElement("p");
 
-    const footer = document.createElement("div");
-    footer.className = "product-footer";
+    description.className =
+        "product-description";
 
-    const hint = document.createElement("span");
-    hint.className = "detail-hint";
-    hint.textContent = "Detayları görüntüle";
+    description.textContent =
+        product.description;
 
-    const arrow = document.createElement("span");
-    arrow.className = "detail-arrow";
-    arrow.textContent = "›";
+    const footer =
+        document.createElement("div");
+
+    footer.className =
+        "product-footer";
+
+    const hint =
+        document.createElement("span");
+
+    hint.className =
+        "detail-hint";
+
+    hint.textContent =
+        "Detayları görüntüle";
+
+    const arrow =
+        document.createElement("span");
+
+    arrow.className =
+        "detail-arrow";
+
+    arrow.textContent =
+        "›";
 
     footer.appendChild(hint);
     footer.appendChild(arrow);
@@ -1744,18 +1969,28 @@ function createProductCard(product){
     body.appendChild(top);
     body.appendChild(description);
     body.appendChild(footer);
+
     card.appendChild(body);
 
-    card.addEventListener("click",function(){
-        openModal(product);
-    });
-
-    card.addEventListener("keydown",function(event){
-        if(event.key === "Enter" || event.key === " "){
-            event.preventDefault();
+    card.addEventListener(
+        "click",
+        function(){
             openModal(product);
         }
-    });
+    );
+
+    card.addEventListener(
+        "keydown",
+        function(event){
+            if(
+                event.key === "Enter" ||
+                event.key === " "
+            ){
+                event.preventDefault();
+                openModal(product);
+            }
+        }
+    );
 
     return card;
 }
@@ -1766,150 +2001,265 @@ function renderMenu(){
     let totalVisible = 0;
 
     menuSections.forEach(function(section){
-        const sectionProducts = products.filter(function(product){
-            return product.category === section.id && productMatches(product);
-        });
+        const sectionProducts =
+            products.filter(function(product){
+                return (
+                    product.category === section.id &&
+                    productMatches(product)
+                );
+            });
 
         if(sectionProducts.length === 0){
             return;
         }
 
-        totalVisible += sectionProducts.length;
+        totalVisible +=
+            sectionProducts.length;
 
-        const sectionElement = document.createElement("section");
-        sectionElement.className = "menu-section";
-        sectionElement.id = section.id;
+        const sectionElement =
+            document.createElement("section");
 
-        const header = document.createElement("div");
-        header.className = "section-header";
+        sectionElement.className =
+            "menu-section";
+
+        sectionElement.id =
+            section.id;
+
+        const header =
+            document.createElement("div");
+
+        header.className =
+            "section-header";
 
         header.innerHTML = `
             <div class="section-heading">
-                <div class="section-icon">${section.icon}</div>
+                <div class="section-icon">
+                    ${section.icon}
+                </div>
+
                 <div>
                     <h2>${section.title}</h2>
                     <p>${section.subtitle}</p>
                 </div>
             </div>
-            <div class="product-count">${sectionProducts.length} ÜRÜN</div>
+
+            <div class="product-count">
+                ${sectionProducts.length} ÜRÜN
+            </div>
         `;
 
-        const grid = document.createElement("div");
-        grid.className = "product-grid";
+        const grid =
+            document.createElement("div");
 
-        sectionProducts.forEach(function(product){
-            grid.appendChild(createProductCard(product));
-        });
+        grid.className =
+            "product-grid";
+
+        sectionProducts.forEach(
+            function(product){
+                grid.appendChild(
+                    createProductCard(product)
+                );
+            }
+        );
 
         sectionElement.appendChild(header);
         sectionElement.appendChild(grid);
-        sectionsContainer.appendChild(sectionElement);
+
+        sectionsContainer.appendChild(
+            sectionElement
+        );
     });
 
-    noResults.style.display = totalVisible === 0 ? "block" : "none";
+    noResults.style.display =
+        totalVisible === 0
+            ? "block"
+            : "none";
 
     requestAnimationFrame(function(){
-        document.querySelectorAll(".product-card").forEach(function(card,index){
-            setTimeout(function(){
-                card.classList.add("visible");
-            },Math.min(index * 35,500));
-        });
+        document
+            .querySelectorAll(".product-card")
+            .forEach(function(card,index){
+                setTimeout(function(){
+                    card.classList.add("visible");
+                },Math.min(index * 35,500));
+            });
     });
 }
 
-filterToggle.addEventListener("click",function(){
-    filterPanel.classList.toggle("open");
-});
+filterToggle.addEventListener(
+    "click",
+    function(){
+        filterPanel.classList.toggle("open");
+    }
+);
 
 filterChips.forEach(function(chip){
-    chip.addEventListener("click",function(){
-        filterChips.forEach(function(item){
-            item.classList.remove("active");
-        });
+    chip.addEventListener(
+        "click",
+        function(){
+            filterChips.forEach(function(item){
+                item.classList.remove("active");
+            });
 
-        chip.classList.add("active");
-        activeFilter = chip.dataset.filter;
-        renderMenu();
+            chip.classList.add("active");
 
-        if(window.innerWidth < 651){
-            filterPanel.classList.remove("open");
+            activeFilter =
+                chip.dataset.filter;
+
+            renderMenu();
+
+            if(window.innerWidth < 651){
+                filterPanel.classList.remove("open");
+            }
         }
-    });
+    );
 });
 
-searchInput.addEventListener("input",renderMenu);
+searchInput.addEventListener(
+    "input",
+    renderMenu
+);
 
-const modal = document.getElementById("productModal");
-const modalClose = document.getElementById("modalClose");
-const modalImageWrap = document.getElementById("modalImageWrap");
-const modalImage = document.getElementById("modalImage");
-const modalCategory = document.getElementById("modalCategory");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalService = document.getElementById("modalService");
-const modalPrice = document.getElementById("modalPrice");
-const modalCallButton = document.getElementById("modalCallButton");
+const modal =
+    document.getElementById("productModal");
+
+const modalClose =
+    document.getElementById("modalClose");
+
+const modalImageWrap =
+    document.getElementById("modalImageWrap");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalService =
+    document.getElementById("modalService");
+
+const modalPrice =
+    document.getElementById("modalPrice");
+
+const modalCallButton =
+    document.getElementById("modalCallButton");
 
 function getSectionTitle(category){
-    const section = menuSections.find(function(item){
-        return item.id === category;
-    });
+    const section =
+        menuSections.find(function(item){
+            return item.id === category;
+        });
 
-    return section ? section.title : "Menü";
+    return section
+        ? section.title
+        : "Menü";
 }
 
 function openModal(product){
     modalCategory.textContent =
         product.weight
-            ? getSectionTitle(product.category) + " • " + product.weight
+            ? getSectionTitle(product.category) +
+              " • " +
+              product.weight
             : getSectionTitle(product.category);
 
-    modalTitle.textContent = product.title;
-    modalDescription.textContent = product.description;
-    modalService.textContent = product.service;
-    modalPrice.textContent = product.price;
+    modalTitle.textContent =
+        product.title;
+
+    modalDescription.textContent =
+        product.description;
+
+    modalService.textContent =
+        product.service;
+
+    modalPrice.textContent =
+        product.price;
 
     if(product.image){
-        modalImageWrap.style.display = "block";
-        modalImage.src = product.image;
-        modalImage.alt = product.title;
+        modalImageWrap.style.display =
+            "block";
+
+        modalImage.src =
+            product.image;
+
+        modalImage.alt =
+            product.title;
 
         modalImage.onerror = function(){
-            modalImageWrap.style.display = "none";
+            modalImageWrap.style.display =
+                "none";
         };
     }else{
-        modalImageWrap.style.display = "none";
+        modalImageWrap.style.display =
+            "none";
     }
 
     modal.classList.add("open");
-    modal.setAttribute("aria-hidden","false");
-    document.body.style.overflow = "hidden";
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
     modalClose.focus();
 }
 
 function closeModal(){
     modal.classList.remove("open");
-    modal.setAttribute("aria-hidden","true");
-    document.body.style.overflow = "";
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "modal-open"
+    );
 }
 
-modalClose.addEventListener("click",closeModal);
+modalClose.addEventListener(
+    "click",
+    closeModal
+);
 
-modal.addEventListener("click",function(event){
-    if(event.target === modal){
-        closeModal();
+modal.addEventListener(
+    "click",
+    function(event){
+        if(event.target === modal){
+            closeModal();
+        }
     }
-});
+);
 
-document.addEventListener("keydown",function(event){
-    if(event.key === "Escape" && modal.classList.contains("open")){
-        closeModal();
+document.addEventListener(
+    "keydown",
+    function(event){
+        if(
+            event.key === "Escape" &&
+            modal.classList.contains("open")
+        ){
+            closeModal();
+        }
     }
-});
+);
 
-modalCallButton.addEventListener("click",function(){
-    window.location.href = "tel:+905550240880";
-});
+modalCallButton.addEventListener(
+    "click",
+    function(){
+        window.location.href =
+            "tel:+905550240880";
+    }
+);
 
 renderMenu();
 </script>
