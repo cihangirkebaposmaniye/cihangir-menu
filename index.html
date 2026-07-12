@@ -3,310 +3,1915 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diyarbakır Cihangir Kebap</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Diyarbakır Cihangir Kebap | Dijital Menü</title>
+<meta name="description" content="Diyarbakır Cihangir Kebap dijital menüsü. Izgaralar, dürümler, lahmacunlar ve kiloluk servisler.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --bg:#090909;
+    --bg-soft:#11100e;
+    --card:#171512;
+    --card-2:#201c17;
+    --gold:#d2a95f;
+    --gold-light:#f0d18f;
+    --cream:#f7f1e7;
+    --muted:#b9b0a3;
+    --red:#8e1c1c;
+    --border:rgba(210,169,95,.25);
+    --shadow:0 18px 45px rgba(0,0,0,.42);
+}
+
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:140px;
 }
 
 body{
-    font-family:Poppins,sans-serif;
-    background:#0b0b0b;
-    color:white;
+    font-family:"Montserrat",Arial,sans-serif;
+    background:
+        radial-gradient(circle at top right,rgba(210,169,95,.08),transparent 28%),
+        var(--bg);
+    color:var(--cream);
+    overflow-x:hidden;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+a{
+    color:inherit;
+}
+
+img{
+    max-width:100%;
 }
 
 .hero{
-    min-height:70vh;
-    background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
-    url('images/menu.png') center center/cover;
+    min-height:82vh;
+    position:relative;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:40px;
+    padding:70px 20px 55px;
+    background:
+        linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.92)),
+        url("images/adana.jpg") center/cover no-repeat;
+    overflow:hidden;
 }
 
-.hero-content img{
-    width:140px;
-    background:white;
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 85%,rgba(213,98,25,.25),transparent 38%),
+        linear-gradient(90deg,rgba(0,0,0,.65),transparent 38%,transparent 62%,rgba(0,0,0,.65));
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-1px;
+    height:100px;
+    background:linear-gradient(transparent,var(--bg));
+}
+
+.hero-smoke{
+    position:absolute;
+    inset:0;
+    background:url("images/smoke.gif") center/cover no-repeat;
+    opacity:.12;
+    mix-blend-mode:screen;
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    animation:heroUp .9s ease both;
+}
+
+@keyframes heroUp{
+    from{
+        opacity:0;
+        transform:translateY(28px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo-frame{
+    width:138px;
+    height:138px;
+    margin:0 auto 22px;
     border-radius:50%;
-    padding:8px;
-    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px;
+    background:rgba(255,255,255,.96);
+    border:3px solid var(--gold);
+    box-shadow:
+        0 0 0 8px rgba(210,169,95,.10),
+        0 18px 40px rgba(0,0,0,.52);
+}
+
+.logo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gold-light);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.eyebrow::before,
+.eyebrow::after{
+    content:"";
+    width:34px;
+    height:1px;
+    background:var(--gold);
 }
 
 .hero h1{
-    font-size:48px;
-    color:#C79A52;
+    font-family:"Cormorant Garamond",serif;
+    color:#fff;
+    font-size:clamp(46px,8vw,82px);
+    line-height:.95;
+    letter-spacing:-1px;
+    text-shadow:0 8px 30px rgba(0,0,0,.8);
 }
 
-.hero p{
-    margin-top:10px;
-    color:#ddd;
+.hero h1 span{
+    display:block;
+    color:var(--gold-light);
 }
 
-nav{
-    position:sticky;
-    top:0;
-    background:#111;
-    padding:15px;
-    text-align:center;
-    z-index:1000;
+.hero-description{
+    max-width:690px;
+    margin:20px auto 0;
+    color:#e6ded2;
+    font-size:clamp(15px,2vw,18px);
+    line-height:1.75;
 }
 
-nav a{
-    color:white;
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.hero-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:52px;
+    padding:0 24px;
+    border-radius:999px;
     text-decoration:none;
-    margin:0 10px;
-    font-weight:600;
-}
-
-nav a:hover{
-    color:#C79A52;
-}
-
-.search{
-    max-width:800px;
-    margin:30px auto;
-    padding:0 15px;
-}
-
-.search input{
-    width:100%;
-    padding:16px;
-    border-radius:50px;
-    border:none;
-    background:#1b1b1b;
-    color:white;
-    font-size:16px;
-}
-
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-}
-
-.section-title{
-    margin:40px 0 20px;
-    color:#C79A52;
-    border-left:5px solid #C79A52;
-    padding-left:10px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#171717;
-    border-radius:20px;
-    overflow:hidden;
-    transition:.3s;
-    cursor:pointer;
-    border:1px solid rgba(199,154,82,.2);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:20px;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#bbb;
+    font-weight:800;
     font-size:14px;
+    transition:.25s ease;
 }
 
-.price{
-    margin-top:15px;
-    color:#C79A52;
-    font-size:28px;
+.hero-button.primary{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#17110a;
+    box-shadow:0 10px 30px rgba(210,169,95,.25);
+}
+
+.hero-button.secondary{
+    border:1px solid rgba(255,255,255,.45);
+    background:rgba(0,0,0,.32);
+    backdrop-filter:blur(8px);
+    color:#fff;
+}
+
+.hero-button:hover{
+    transform:translateY(-3px);
+}
+
+.hero-badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:25px;
+}
+
+.hero-badge{
+    padding:9px 13px;
+    border:1px solid rgba(210,169,95,.36);
+    background:rgba(15,12,9,.62);
+    backdrop-filter:blur(8px);
+    border-radius:999px;
+    color:#efe5d5;
+    font-size:12px;
     font-weight:700;
 }
 
-.floating{
+.sticky-area{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(9,9,9,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.quick-nav{
+    display:flex;
+    overflow-x:auto;
+    scrollbar-width:none;
+    max-width:1280px;
+    margin:auto;
+    padding:11px 14px 5px;
+    gap:8px;
+}
+
+.quick-nav::-webkit-scrollbar{
+    display:none;
+}
+
+.quick-nav a{
+    flex:0 0 auto;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:999px;
+    color:#ddd3c5;
+    font-size:12px;
+    font-weight:800;
+    border:1px solid transparent;
+    transition:.2s;
+}
+
+.quick-nav a:hover{
+    color:#17110a;
+    background:var(--gold);
+}
+
+.controls{
+    max-width:1280px;
+    margin:auto;
+    padding:7px 14px 13px;
+    display:grid;
+    grid-template-columns:minmax(220px,1fr) auto;
+    gap:10px;
+    align-items:center;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box svg{
+    position:absolute;
+    left:17px;
+    top:50%;
+    transform:translateY(-50%);
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:2;
+}
+
+.search-box input{
+    width:100%;
+    height:48px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:#15130f;
+    color:#fff;
+    padding:0 46px;
+    outline:none;
+    transition:.25s;
+}
+
+.search-box input:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 4px rgba(210,169,95,.10);
+}
+
+.search-box input::placeholder{
+    color:#8f887d;
+}
+
+.filter-button{
+    height:48px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:#15130f;
+    color:var(--gold-light);
+    padding:0 18px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.filter-panel{
+    max-width:1280px;
+    margin:auto;
+    padding:0 14px 13px;
+    display:none;
+    gap:8px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.filter-panel.open{
+    display:flex;
+}
+
+.filter-chip{
+    flex:0 0 auto;
+    border:1px solid var(--border);
+    background:#15130f;
+    color:#ddd3c5;
+    padding:9px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:12px;
+}
+
+.filter-chip.active{
+    background:var(--gold);
+    color:#17110a;
+    border-color:var(--gold);
+}
+
+main{
+    max-width:1280px;
+    margin:auto;
+    padding:28px 14px 110px;
+}
+
+.intro{
+    text-align:center;
+    max-width:730px;
+    margin:0 auto 35px;
+}
+
+.intro-kicker{
+    color:var(--gold);
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:11px;
+    font-weight:800;
+}
+
+.intro h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(38px,6vw,58px);
+    margin-top:7px;
+}
+
+.intro p{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
+    margin-top:8px;
+}
+
+.menu-section{
+    margin-top:48px;
+}
+
+.section-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:20px;
+    padding-bottom:13px;
+    border-bottom:1px solid var(--border);
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.section-icon{
+    width:43px;
+    height:43px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#191209;
+    display:grid;
+    place-items:center;
+    font-size:20px;
+    box-shadow:0 8px 22px rgba(210,169,95,.17);
+}
+
+.section-header h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(31px,4vw,43px);
+    line-height:1;
+}
+
+.section-header p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+.product-count{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+    white-space:nowrap;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+
+.product-card{
+    position:relative;
+    min-width:0;
+    border-radius:23px;
+    overflow:hidden;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.025),transparent),
+        var(--card);
+    border:1px solid var(--border);
+    box-shadow:0 10px 32px rgba(0,0,0,.24);
+    cursor:pointer;
+    transition:
+        transform .32s ease,
+        box-shadow .32s ease,
+        border-color .32s ease;
+    opacity:0;
+    transform:translateY(24px);
+}
+
+.product-card.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(210,169,95,.58);
+    box-shadow:var(--shadow);
+}
+
+.product-image-wrap{
+    position:relative;
+    height:205px;
+    overflow:hidden;
+    background:#24201b;
+}
+
+.product-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .65s ease;
+}
+
+.product-card:hover .product-image{
+    transform:scale(1.07);
+}
+
+.image-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 48%,rgba(0,0,0,.78));
+    pointer-events:none;
+}
+
+.product-tag{
+    position:absolute;
+    left:12px;
+    top:12px;
+    z-index:2;
+    padding:7px 11px;
+    border-radius:999px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#17110a;
+    font-size:10px;
+    font-weight:900;
+    box-shadow:0 7px 18px rgba(0,0,0,.3);
+}
+
+.product-body{
+    padding:17px;
+}
+
+.product-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.product-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    line-height:1;
+}
+
+.product-price{
+    flex:0 0 auto;
+    color:var(--gold-light);
+    font-weight:900;
+    font-size:21px;
+    line-height:1;
+}
+
+.product-description{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.65;
+    margin-top:11px;
+    min-height:39px;
+}
+
+.product-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-top:16px;
+    padding-top:13px;
+    border-top:1px solid rgba(210,169,95,.12);
+}
+
+.detail-hint{
+    color:#8f877b;
+    font-size:11px;
+    font-weight:700;
+}
+
+.detail-arrow{
+    color:var(--gold);
+    font-size:20px;
+    line-height:1;
+}
+
+.text-card{
+    min-height:190px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:20px;
+    background:
+        radial-gradient(circle at top right,rgba(210,169,95,.12),transparent 40%),
+        var(--card);
+}
+
+.text-card .product-description{
+    min-height:0;
+}
+
+.weight-label{
+    display:inline-block;
+    color:#17110a;
+    background:var(--gold);
+    padding:6px 9px;
+    border-radius:7px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:13px;
+}
+
+.special-card{
+    background:
+        radial-gradient(circle at right top,rgba(210,169,95,.20),transparent 42%),
+        linear-gradient(145deg,#25140f,#491313);
+}
+
+.no-results{
+    display:none;
+    text-align:center;
+    padding:65px 20px;
+    border:1px dashed var(--border);
+    border-radius:22px;
+    color:var(--muted);
+}
+
+.no-results strong{
+    display:block;
+    color:var(--gold-light);
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    margin-bottom:7px;
+}
+
+.contact-section{
+    margin-top:65px;
+    border:1px solid var(--border);
+    border-radius:27px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top right,rgba(210,169,95,.13),transparent 34%),
+        var(--bg-soft);
+}
+
+.contact-inner{
+    padding:38px 22px;
+    text-align:center;
+}
+
+.contact-inner h2{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold-light);
+    font-size:42px;
+}
+
+.contact-inner p{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:7px;
+}
+
+.contact-actions{
+    margin-top:22px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.contact-link{
+    min-height:48px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border-radius:999px;
+    padding:0 19px;
+    text-decoration:none;
+    border:1px solid var(--border);
+    background:#191611;
+    font-size:13px;
+    font-weight:800;
+}
+
+.contact-link.gold{
+    color:#17110a;
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+footer{
+    text-align:center;
+    padding:34px 20px 100px;
+    color:#8e877d;
+    border-top:1px solid rgba(210,169,95,.12);
+    font-size:12px;
+}
+
+footer strong{
+    display:block;
+    color:var(--gold-light);
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    margin-bottom:6px;
+}
+
+.floating-actions{
     position:fixed;
-    right:20px;
-    bottom:20px;
+    right:17px;
+    bottom:18px;
+    z-index:1200;
     display:flex;
     flex-direction:column;
     gap:10px;
 }
 
-.float-btn{
-    width:60px;
-    height:60px;
+.float-button{
+    width:57px;
+    height:57px;
+    display:grid;
+    place-items:center;
     border-radius:50%;
-    background:#C79A52;
-    color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     text-decoration:none;
-    font-size:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,.48);
+    transition:.25s;
+    font-size:22px;
+}
+
+.float-button:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+.float-button.phone{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#17110a;
+}
+
+.float-button.whatsapp{
+    background:#25d366;
+    color:#fff;
 }
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.8);
-    justify-content:center;
+    z-index:5000;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(7px);
     align-items:center;
-    z-index:9999;
+    justify-content:center;
+    padding:18px;
 }
 
-.modal-content{
-    width:90%;
-    max-width:500px;
-    background:#171717;
-    border-radius:20px;
+.modal.open{
+    display:flex;
+}
+
+.modal-dialog{
+    position:relative;
+    width:min(530px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#171411;
+    border:1px solid rgba(210,169,95,.55);
+    border-radius:27px;
+    box-shadow:0 30px 90px rgba(0,0,0,.75);
+    animation:modalIn .25s ease both;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.modal-close{
+    position:absolute;
+    top:12px;
+    right:12px;
+    z-index:5;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.65);
+    color:#fff;
+    cursor:pointer;
+    font-size:24px;
+}
+
+.modal-image-wrap{
+    height:260px;
+    background:#211e19;
+    overflow:hidden;
+}
+
+.modal-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-body{
     padding:25px;
-    border:1px solid #C79A52;
 }
 
-.close{
-    float:right;
+.modal-label{
+    color:var(--gold);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.modal-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:39px;
+    margin-top:5px;
+}
+
+.modal-description{
+    color:var(--muted);
+    line-height:1.75;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.modal-info{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+    padding-top:18px;
+    border-top:1px solid var(--border);
+}
+
+.modal-service{
+    color:#d8d0c3;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.modal-price{
+    color:var(--gold-light);
+    font-weight:900;
     font-size:30px;
+}
+
+.modal-action{
+    width:100%;
+    min-height:50px;
+    margin-top:20px;
+    border:none;
+    border-radius:999px;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#17110a;
+    font-weight:900;
     cursor:pointer;
 }
 
-.footer{
-    text-align:center;
-    padding:40px;
-    margin-top:50px;
-    background:#111;
+@media(max-width:920px){
+    .product-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:650px){
+    .hero{
+        min-height:70vh;
+        padding-top:45px;
+    }
+
+    .logo-frame{
+        width:112px;
+        height:112px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+        max-width:310px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .controls{
+        grid-template-columns:1fr auto;
+    }
+
+    .filter-button{
+        width:48px;
+        padding:0;
+        font-size:0;
+    }
+
+    .filter-button::after{
+        content:"☰";
+        font-size:19px;
+    }
+
+    main{
+        padding-left:11px;
+        padding-right:11px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+        gap:13px;
+    }
+
+    .product-card{
+        display:grid;
+        grid-template-columns:122px minmax(0,1fr);
+        min-height:146px;
+    }
+
+    .product-image-wrap{
+        height:100%;
+        min-height:146px;
+    }
+
+    .product-body{
+        padding:14px;
+    }
+
+    .product-title{
+        font-size:23px;
+    }
+
+    .product-price{
+        font-size:18px;
+    }
+
+    .product-description{
+        font-size:11px;
+        min-height:0;
+    }
+
+    .product-footer{
+        margin-top:10px;
+        padding-top:10px;
+    }
+
+    .text-card{
+        display:flex;
+        min-height:165px;
+        padding:18px;
+    }
+
+    .section-header{
+        align-items:center;
+    }
+
+    .section-icon{
+        width:39px;
+        height:39px;
+    }
+
+    .modal-image-wrap{
+        height:220px;
+    }
+
+    .floating-actions{
+        right:12px;
+        bottom:12px;
+    }
+
+    .float-button{
+        width:53px;
+        height:53px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-<div class="hero-content">
-<img src="cihangir.png">
-<h1>Diyarbakır Cihangir Kebap</h1>
-<p>Zırh ustalarının elinden geleneksel Diyarbakır lezzeti.</p>
-</div>
+<header class="hero" id="anasayfa">
+    <div class="hero-smoke"></div>
+
+    <div class="hero-content">
+        <div class="logo-frame">
+            <img src="images/cihangir.png" alt="Diyarbakır Cihangir Kebap logosu">
+        </div>
+
+        <div class="eyebrow">Geleneksel ocakbaşı</div>
+
+        <h1>
+            Diyarbakır
+            <span>Cihangir Kebap</span>
+        </h1>
+
+        <p class="hero-description">
+            Zırh ustalarının elinden, günlük taze et ve köz ateşiyle hazırlanan
+            geleneksel kebap lezzetleri.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#menu" class="hero-button primary">Menüyü Keşfet</a>
+            <a href="tel:+905550240880" class="hero-button secondary">0555 024 08 80</a>
+        </div>
+
+        <div class="hero-badges">
+            <span class="hero-badge">🔥 Köz Ateşi</span>
+            <span class="hero-badge">🥩 Günlük Taze Et</span>
+            <span class="hero-badge">🥗 6 Çeşit Meze</span>
+        </div>
+    </div>
 </header>
 
-<nav>
-<a href="#izgara">Izgaralar</a>
-<a href="#durum">Dürümler</a>
-<a href="#icecek">İçecekler</a>
-</nav>
+<div class="sticky-area">
+    <nav class="quick-nav" aria-label="Menü kategorileri">
+        <a href="#onecikan">⭐ Öne Çıkanlar</a>
+        <a href="#izgara">🔥 Izgaralar</a>
+        <a href="#kiloluk">⚖️ Kiloluk</a>
+        <a href="#durum">🌯 Dürümler</a>
+        <a href="#lahmacun">🫓 Lahmacun</a>
+        <a href="#calisan">👨‍🍳 Çalışan Menü</a>
+        <a href="#icecek">🥤 İçecekler</a>
+    </nav>
 
-<div class="search">
-<input type="text" id="searchInput" placeholder="Menüde ara...">
+    <div class="controls">
+        <div class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.6-3.6"></path>
+            </svg>
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Ürün ara: Adana, ciğer, tavuk..."
+                autocomplete="off"
+                aria-label="Menüde ürün ara">
+        </div>
+
+        <button class="filter-button" id="filterToggle" type="button">
+            Kategoriler
+        </button>
+    </div>
+
+    <div class="filter-panel" id="filterPanel">
+        <button class="filter-chip active" data-filter="all">Tümü</button>
+        <button class="filter-chip" data-filter="onecikan">Öne Çıkanlar</button>
+        <button class="filter-chip" data-filter="izgara">Izgaralar</button>
+        <button class="filter-chip" data-filter="kiloluk">Kiloluk</button>
+        <button class="filter-chip" data-filter="durum">Dürümler</button>
+        <button class="filter-chip" data-filter="lahmacun">Lahmacun</button>
+        <button class="filter-chip" data-filter="calisan">Çalışan Menü</button>
+        <button class="filter-chip" data-filter="icecek">İçecekler</button>
+    </div>
 </div>
 
-<div class="container">
+<main id="menu">
+    <div class="intro">
+        <div class="intro-kicker">Dijital menü</div>
+        <h2>Ocaktan Sofraya</h2>
+        <p>
+            Ürün kartına dokunarak detayları görüntüleyebilir,
+            arama ve kategori filtreleriyle menüyü kolayca inceleyebilirsiniz.
+        </p>
+    </div>
 
-<h2 class="section-title" id="izgara">Izgaralar</h2>
+    <div id="sectionsContainer"></div>
 
-<div class="grid">
+    <div class="no-results" id="noResults">
+        <strong>Ürün bulunamadı</strong>
+        Arama ifadenizi değiştirerek tekrar deneyin.
+    </div>
 
-<div class="card" onclick="showProduct('Adana Kebap','6 çeşit meze ve köz sebze ile servis edilir.','390₺')">
-<img src="images/adana.jpg">
-<div class="card-content">
-<h3>Adana Kebap</h3>
-<p>6 çeşit meze ile servis edilir.</p>
-<div class="price">390₺</div>
-</div>
+    <section class="contact-section">
+        <div class="contact-inner">
+            <h2>Diyarbakır Cihangir Kebap</h2>
+            <p>Sipariş, bilgi ve rezervasyon için bize ulaşabilirsiniz.</p>
+
+            <div class="contact-actions">
+                <a class="contact-link gold" href="tel:+905550240880">
+                    📞 Hemen Ara
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="https://wa.me/905550240880?text=Merhaba%2C%20Diyarbak%C4%B1r%20Cihangir%20Kebap%20men%C3%BCs%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                    target="_blank"
+                    rel="noopener">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <strong>Diyarbakır Cihangir Kebap</strong>
+    📍 Diyarbakır<br>
+    📞 0555 024 08 80<br><br>
+    © 2026 Tüm hakları saklıdır.
+</footer>
+
+<div class="floating-actions">
+    <a
+        class="float-button whatsapp"
+        href="https://wa.me/905550240880?text=Merhaba%2C%20men%C3%BCn%C3%BCz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp">
+        💬
+    </a>
+
+    <a
+        class="float-button phone"
+        href="tel:+905550240880"
+        aria-label="Telefon">
+        📞
+    </a>
 </div>
 
-<div class="card" onclick="showProduct('Kaburga Şiş','Özel marine edilmiş kaburga eti.','450₺')">
-<img src="images/kaburga.jpg">
-<div class="card-content">
-<h3>Kaburga Şiş</h3>
-<p>Özel marine edilmiş et.</p>
-<div class="price">450₺</div>
-</div>
-</div>
+<div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Kapat">
+            ×
+        </button>
 
-<div class="card" onclick="showProduct('Ciğer Şiş','Diyarbakır usulü ciğer şiş.','420₺')">
-<img src="images/ciger.jpg">
-<div class="card-content">
-<h3>Ciğer Şiş</h3>
-<p>Diyarbakır usulü hazırlanır.</p>
-<div class="price">420₺</div>
-</div>
-</div>
+        <div class="modal-image-wrap" id="modalImageWrap">
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
 
-</div>
+        <div class="modal-body">
+            <div class="modal-label" id="modalCategory"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-description" id="modalDescription"></p>
 
-</div>
+            <div class="modal-info">
+                <div class="modal-service" id="modalService"></div>
+                <div class="modal-price" id="modalPrice"></div>
+            </div>
 
-<div class="footer">
-📍 Diyarbakır<br>
-📞 0555 024 08 80<br><br>
-© 2026 Diyarbakır Cihangir Kebap
-</div>
-
-<div class="floating">
-<a href="tel:05550240880" class="float-btn">📞</a>
-<a href="https://wa.me/905550240880" class="float-btn">💬</a>
-</div>
-
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">&times;</span>
-<h2 id="modalTitle"></h2>
-<p id="modalDesc"></p>
-<h3 id="modalPrice" style="color:#C79A52;margin-top:15px;"></h3>
-</div>
+            <button class="modal-action" id="modalCallButton" type="button">
+                Telefonla Bilgi Al
+            </button>
+        </div>
+    </div>
 </div>
 
 <script>
-const searchInput=document.getElementById("searchInput");
+const menuSections = [
+    {
+        id: "onecikan",
+        title: "Öne Çıkan Lezzetler",
+        subtitle: "Misafirlerimizin en çok tercih ettiği ürünler",
+        icon: "⭐"
+    },
+    {
+        id: "izgara",
+        title: "Izgaralar",
+        subtitle: "Köz ateşinde günlük olarak hazırlanır",
+        icon: "🔥"
+    },
+    {
+        id: "kiloluk",
+        title: "Kiloluk Servisler",
+        subtitle: "Kalabalık sofralar ve özel siparişler için",
+        icon: "⚖️"
+    },
+    {
+        id: "durum",
+        title: "Dürümler",
+        subtitle: "Taze lavaşla hazırlanan doyurucu lezzetler",
+        icon: "🌯"
+    },
+    {
+        id: "lahmacun",
+        title: "Lahmacunlar",
+        subtitle: "Taş fırından sıcak ve çıtır",
+        icon: "🫓"
+    },
+    {
+        id: "calisan",
+        title: "Çalışan Menüsü",
+        subtitle: "Doyurucu ve avantajlı menü seçeneği",
+        icon: "👨‍🍳"
+    },
+    {
+        id: "icecek",
+        title: "İçecekler",
+        subtitle: "Yemeğinize eşlik eden ferah seçenekler",
+        icon: "🥤"
+    }
+];
 
-searchInput.addEventListener("keyup",function(){
-let value=this.value.toLowerCase();
+const products = [
+    {
+        category:"onecikan",
+        title:"Adana Kebap",
+        description:"Zırhta çekilmiş özel kıyma, köz domates, biber ve lavaşla servis edilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"390₺",
+        image:"images/adana.jpg",
+        tag:"En Çok Tercih Edilen"
+    },
+    {
+        category:"onecikan",
+        title:"Kaburga Şiş",
+        description:"Özel marine edilmiş kaburga eti, köz sebzeler ve lavaşla servis edilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"450₺",
+        image:"images/kaburga.jpg",
+        tag:"Şefin Tavsiyesi"
+    },
+    {
+        category:"onecikan",
+        title:"Special Sarma Beyti",
+        description:"Özel sarım tekniği ve zengin sunumuyla restoranımızın imza lezzeti.",
+        service:"6 çeşit meze dahildir.",
+        price:"720₺",
+        image:"images/specialsarmabeyti.jpg",
+        tag:"Premium"
+    },
 
-document.querySelectorAll(".card").forEach(card=>{
-card.style.display=
-card.innerText.toLowerCase().includes(value)
-? "block"
-: "none";
+    {
+        category:"izgara",
+        title:"Adana Kebap",
+        description:"Zırhta çekilmiş kıyma, köz sebzeler ve lavaşla servis edilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"390₺",
+        image:"images/adana.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Kaburga Şiş",
+        description:"Özel marine edilmiş kaburga eti, köz ateşinde pişirilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"450₺",
+        image:"images/kaburga.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Ciğer",
+        description:"Günlük taze ciğer, şişte ve köz ateşinde hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"470₺",
+        image:"images/ciger.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Kuşbaşı",
+        description:"Özenle seçilmiş kuzu eti, şişte köz ateşinde pişirilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"440₺",
+        image:"images/kusbasi.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Pirzola",
+        description:"Kuzu pirzola, özel baharatlarla köz ateşinde hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/pizola.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Beyti",
+        description:"Özel kebap harcı ve geleneksel sunumla hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/beyti.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Sarma Beyti",
+        description:"Lavaşla sarılmış kebap, özel sunumla servis edilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/sarmabeyti.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Special Sarma Beyti",
+        description:"Özel malzemeler ve zengin sunumla hazırlanan imza lezzet.",
+        service:"6 çeşit meze dahildir.",
+        price:"720₺",
+        image:"images/specialsarmabeyti.jpg",
+        tag:"Premium"
+    },
+    {
+        category:"izgara",
+        title:"Kazbaşı",
+        description:"Özel kesim et, köz ateşinde ustalıkla pişirilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/kazbasi.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Külbastı",
+        description:"Özel marine edilmiş kuzu eti, köz ateşinde hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/kulbasti.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Yağlı Kara",
+        description:"Kuzu etinin lezzetli ve yumuşak bölümünden hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺",
+        image:"images/yaglikara.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Patlıcan Kebabı",
+        description:"Patlıcan ve kebap eti, köz ateşinde birlikte pişirilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"650₺",
+        image:"images/patlicankebabi.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Tereyağlı Lokum",
+        description:"Yumuşak et parçaları tereyağı dokunuşuyla hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"650₺",
+        image:"images/tereyaglikokum.jpg"
+    },
+    {
+        category:"izgara",
+        title:"İki Yüzlü Kebap",
+        description:"İki farklı kebap lezzetini bir araya getiren özel servis.",
+        service:"6 çeşit meze dahildir.",
+        price:"720₺",
+        image:"images/iki-yuzlu.jpg",
+        tag:"Özel Lezzet"
+    },
+    {
+        category:"izgara",
+        title:"Kemiksiz Tavuk",
+        description:"Marine edilmiş kemiksiz tavuk eti, köz ateşinde hazırlanır.",
+        service:"6 çeşit meze dahildir.",
+        price:"420₺",
+        image:"images/kemiksizezuk.jpg"
+    },
+    {
+        category:"izgara",
+        title:"Kanat",
+        description:"Özel sosla marine edilmiş tavuk kanatları köz ateşinde pişirilir.",
+        service:"6 çeşit meze dahildir.",
+        price:"420₺",
+        image:"images/kanat.jpg"
+    },
+
+    {
+        category:"kiloluk",
+        title:"Adana Kebap",
+        weight:"1 KG",
+        description:"7 şiş, her biri 150 gram.",
+        service:"6 çeşit meze dahildir.",
+        price:"1800₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kaburga Şiş",
+        weight:"1 KG",
+        description:"20 şiş kaburga servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"2000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Ciğer",
+        weight:"1 KG",
+        description:"30 şiş ciğer servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"2000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kemiksiz Tavuk",
+        weight:"1 KG",
+        description:"6 şiş kemiksiz tavuk servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"950₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kanat",
+        weight:"1 KG",
+        description:"6 şiş tavuk kanat servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"950₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Pirzola",
+        weight:"1 KG",
+        description:"12 adet kuzu pirzola.",
+        service:"6 çeşit meze dahildir.",
+        price:"2000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kuşbaşı",
+        weight:"1 KG",
+        description:"12 şiş kuşbaşı servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"2000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Adana Lahmacun",
+        weight:"1 KG",
+        description:"50 adet Adana lahmacun.",
+        service:"6 çeşit meze dahildir.",
+        price:"1650₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Adana Kebap",
+        weight:"YARIM KG",
+        description:"4 şiş, her biri 150 gram.",
+        service:"6 çeşit meze dahildir.",
+        price:"1000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Adana Lahmacun",
+        weight:"YARIM KG",
+        description:"25 adet Adana lahmacun.",
+        service:"6 çeşit meze dahildir.",
+        price:"1000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kaburga Şiş",
+        weight:"YARIM KG",
+        description:"10 şiş kaburga servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"1000₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Ciğer",
+        weight:"YARIM KG",
+        description:"15 şiş ciğer servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"1100₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kemiksiz Tavuk",
+        weight:"YARIM KG",
+        description:"3 şiş kemiksiz tavuk servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kanat",
+        weight:"YARIM KG",
+        description:"3 şiş tavuk kanat servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"600₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Kuşbaşı",
+        weight:"YARIM KG",
+        description:"6 şiş kuşbaşı servisi.",
+        service:"6 çeşit meze dahildir.",
+        price:"1100₺"
+    },
+    {
+        category:"kiloluk",
+        title:"Pirzola",
+        weight:"YARIM KG",
+        description:"6 adet kuzu pirzola.",
+        service:"6 çeşit meze dahildir.",
+        price:"1100₺"
+    },
+
+    {
+        category:"durum",
+        title:"Tavuk Dürüm",
+        description:"Taze lavaş içerisinde közde pişmiş tavuk eti.",
+        service:"Dürüm servisi.",
+        price:"275₺"
+    },
+    {
+        category:"durum",
+        title:"Adana Dürüm",
+        description:"Taze lavaş içerisinde zırh kıymasıyla hazırlanan kebap.",
+        service:"Dürüm servisi.",
+        price:"275₺"
+    },
+    {
+        category:"durum",
+        title:"Kuşbaşı Dürüm",
+        description:"Taze lavaş içerisinde közde pişmiş kuşbaşı eti.",
+        service:"Dürüm servisi.",
+        price:"300₺"
+    },
+    {
+        category:"durum",
+        title:"Ciğer Dürüm",
+        description:"Taze lavaş içerisinde közde pişmiş ciğer.",
+        service:"Dürüm servisi.",
+        price:"300₺"
+    },
+    {
+        category:"durum",
+        title:"Et Çöp Şiş Dürüm",
+        description:"Taze lavaş içerisinde et çöp şiş.",
+        service:"Dürüm servisi.",
+        price:"300₺",
+        image:"images/etcopsis.jpg"
+    },
+    {
+        category:"durum",
+        title:"Kaburga Şiş Dürüm",
+        description:"Taze lavaş içerisinde közde pişmiş kaburga eti.",
+        service:"Dürüm servisi.",
+        price:"300₺",
+        image:"images/kaburga.jpg"
+    },
+
+    {
+        category:"lahmacun",
+        title:"Adana Lahmacun",
+        description:"İnce hamur üzerinde özel harçla taş fırında pişirilir.",
+        service:"Yeşillik ve limonla servis edilir.",
+        price:"330₺",
+        image:"images/adanalahmacun.jpg"
+    },
+    {
+        category:"lahmacun",
+        title:"Antep Lahmacun",
+        description:"Geleneksel Antep usulü harçla taş fırında pişirilir.",
+        service:"Yeşillik ve limonla servis edilir.",
+        price:"330₺",
+        image:"images/anteplahmacun.jpg"
+    },
+    {
+        category:"lahmacun",
+        title:"Fındık Lahmacun",
+        description:"Küçük boy, ince ve çıtır lahmacun servisi.",
+        service:"Yeşillik ve limonla servis edilir.",
+        price:"330₺",
+        image:"images/findiklahmacun.jpg"
+    },
+
+    {
+        category:"calisan",
+        title:"Çalışan Menü",
+        description:"Adana Kebap + Kemiksiz Tavuk + 1 Lahmacun.",
+        service:"Avantajlı ve doyurucu menü.",
+        price:"350₺",
+        image:"images/calisanmenu.jpg",
+        tag:"Ekonomik Menü",
+        special:true
+    },
+
+    {
+        category:"icecek",
+        title:"Açık Ayran",
+        description:"Soğuk ve ferah açık ayran.",
+        service:"İçecek servisi.",
+        price:"50₺",
+        image:"images/icecek.jpg"
+    },
+    {
+        category:"icecek",
+        title:"Kapalı Ayran",
+        description:"Soğuk kapalı ayran.",
+        service:"İçecek servisi.",
+        price:"50₺",
+        image:"images/icecek.jpg"
+    },
+    {
+        category:"icecek",
+        title:"Açık Şalgam",
+        description:"Soğuk açık şalgam.",
+        service:"İçecek servisi.",
+        price:"50₺",
+        image:"images/icecek.jpg"
+    },
+    {
+        category:"icecek",
+        title:"Kapalı Şalgam",
+        description:"Soğuk kapalı şalgam.",
+        service:"İçecek servisi.",
+        price:"50₺",
+        image:"images/icecek.jpg"
+    },
+    {
+        category:"icecek",
+        title:"Kutu Kola",
+        description:"Soğuk kutu kola.",
+        service:"İçecek servisi.",
+        price:"70₺",
+        image:"images/icecek.jpg"
+    }
+];
+
+const sectionsContainer = document.getElementById("sectionsContainer");
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
+const filterToggle = document.getElementById("filterToggle");
+const filterPanel = document.getElementById("filterPanel");
+const filterChips = document.querySelectorAll(".filter-chip");
+
+let activeFilter = "all";
+
+function normalizeText(text){
+    return String(text)
+        .toLocaleLowerCase("tr-TR")
+        .replaceAll("ı","i")
+        .replaceAll("ş","s")
+        .replaceAll("ğ","g")
+        .replaceAll("ü","u")
+        .replaceAll("ö","o")
+        .replaceAll("ç","c");
+}
+
+function productMatches(product){
+    const query = normalizeText(searchInput.value.trim());
+
+    const categoryMatch =
+        activeFilter === "all" ||
+        product.category === activeFilter;
+
+    const searchSource = normalizeText(
+        product.title + " " +
+        product.description + " " +
+        product.service + " " +
+        (product.weight || "") + " " +
+        (product.tag || "")
+    );
+
+    const queryMatch =
+        query === "" ||
+        searchSource.includes(query);
+
+    return categoryMatch && queryMatch;
+}
+
+function createProductCard(product){
+    const card = document.createElement("article");
+
+    card.className =
+        "product-card" +
+        (product.special ? " special-card" : "") +
+        (!product.image ? " text-card" : "");
+
+    card.dataset.category = product.category;
+    card.tabIndex = 0;
+    card.setAttribute("role","button");
+    card.setAttribute("aria-label",product.title + " detaylarını aç");
+
+    if(product.image){
+        const imageWrap = document.createElement("div");
+        imageWrap.className = "product-image-wrap";
+
+        const image = document.createElement("img");
+        image.className = "product-image";
+        image.src = product.image;
+        image.alt = product.title;
+        image.loading = "lazy";
+
+        image.onerror = function(){
+            imageWrap.style.display = "none";
+            card.classList.add("text-card");
+        };
+
+        imageWrap.appendChild(image);
+
+        const overlay = document.createElement("div");
+        overlay.className = "image-overlay";
+        imageWrap.appendChild(overlay);
+
+        if(product.tag){
+            const tag = document.createElement("span");
+            tag.className = "product-tag";
+            tag.textContent = product.tag;
+            imageWrap.appendChild(tag);
+        }
+
+        card.appendChild(imageWrap);
+    }
+
+    const body = document.createElement("div");
+    body.className = "product-body";
+
+    if(product.weight){
+        const weight = document.createElement("span");
+        weight.className = "weight-label";
+        weight.textContent = product.weight;
+        body.appendChild(weight);
+    }
+
+    const top = document.createElement("div");
+    top.className = "product-top";
+
+    const title = document.createElement("h3");
+    title.className = "product-title";
+    title.textContent = product.title;
+
+    const price = document.createElement("div");
+    price.className = "product-price";
+    price.textContent = product.price;
+
+    top.appendChild(title);
+    top.appendChild(price);
+
+    const description = document.createElement("p");
+    description.className = "product-description";
+    description.textContent = product.description;
+
+    const footer = document.createElement("div");
+    footer.className = "product-footer";
+
+    const hint = document.createElement("span");
+    hint.className = "detail-hint";
+    hint.textContent = "Detayları görüntüle";
+
+    const arrow = document.createElement("span");
+    arrow.className = "detail-arrow";
+    arrow.textContent = "›";
+
+    footer.appendChild(hint);
+    footer.appendChild(arrow);
+
+    body.appendChild(top);
+    body.appendChild(description);
+    body.appendChild(footer);
+    card.appendChild(body);
+
+    card.addEventListener("click",function(){
+        openModal(product);
+    });
+
+    card.addEventListener("keydown",function(event){
+        if(event.key === "Enter" || event.key === " "){
+            event.preventDefault();
+            openModal(product);
+        }
+    });
+
+    return card;
+}
+
+function renderMenu(){
+    sectionsContainer.innerHTML = "";
+
+    let totalVisible = 0;
+
+    menuSections.forEach(function(section){
+        const sectionProducts = products.filter(function(product){
+            return product.category === section.id && productMatches(product);
+        });
+
+        if(sectionProducts.length === 0){
+            return;
+        }
+
+        totalVisible += sectionProducts.length;
+
+        const sectionElement = document.createElement("section");
+        sectionElement.className = "menu-section";
+        sectionElement.id = section.id;
+
+        const header = document.createElement("div");
+        header.className = "section-header";
+
+        header.innerHTML = `
+            <div class="section-heading">
+                <div class="section-icon">${section.icon}</div>
+                <div>
+                    <h2>${section.title}</h2>
+                    <p>${section.subtitle}</p>
+                </div>
+            </div>
+            <div class="product-count">${sectionProducts.length} ÜRÜN</div>
+        `;
+
+        const grid = document.createElement("div");
+        grid.className = "product-grid";
+
+        sectionProducts.forEach(function(product){
+            grid.appendChild(createProductCard(product));
+        });
+
+        sectionElement.appendChild(header);
+        sectionElement.appendChild(grid);
+        sectionsContainer.appendChild(sectionElement);
+    });
+
+    noResults.style.display = totalVisible === 0 ? "block" : "none";
+
+    requestAnimationFrame(function(){
+        document.querySelectorAll(".product-card").forEach(function(card,index){
+            setTimeout(function(){
+                card.classList.add("visible");
+            },Math.min(index * 35,500));
+        });
+    });
+}
+
+filterToggle.addEventListener("click",function(){
+    filterPanel.classList.toggle("open");
 });
+
+filterChips.forEach(function(chip){
+    chip.addEventListener("click",function(){
+        filterChips.forEach(function(item){
+            item.classList.remove("active");
+        });
+
+        chip.classList.add("active");
+        activeFilter = chip.dataset.filter;
+        renderMenu();
+
+        if(window.innerWidth < 651){
+            filterPanel.classList.remove("open");
+        }
+    });
 });
 
-function showProduct(title,desc,price){
-document.getElementById("modalTitle").innerText=title;
-document.getElementById("modalDesc").innerText=desc;
-document.getElementById("modalPrice").innerText=price;
-document.getElementById("modal").style.display="flex";
+searchInput.addEventListener("input",renderMenu);
+
+const modal = document.getElementById("productModal");
+const modalClose = document.getElementById("modalClose");
+const modalImageWrap = document.getElementById("modalImageWrap");
+const modalImage = document.getElementById("modalImage");
+const modalCategory = document.getElementById("modalCategory");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalService = document.getElementById("modalService");
+const modalPrice = document.getElementById("modalPrice");
+const modalCallButton = document.getElementById("modalCallButton");
+
+function getSectionTitle(category){
+    const section = menuSections.find(function(item){
+        return item.id === category;
+    });
+
+    return section ? section.title : "Menü";
+}
+
+function openModal(product){
+    modalCategory.textContent =
+        product.weight
+            ? getSectionTitle(product.category) + " • " + product.weight
+            : getSectionTitle(product.category);
+
+    modalTitle.textContent = product.title;
+    modalDescription.textContent = product.description;
+    modalService.textContent = product.service;
+    modalPrice.textContent = product.price;
+
+    if(product.image){
+        modalImageWrap.style.display = "block";
+        modalImage.src = product.image;
+        modalImage.alt = product.title;
+
+        modalImage.onerror = function(){
+            modalImageWrap.style.display = "none";
+        };
+    }else{
+        modalImageWrap.style.display = "none";
+    }
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    modalClose.focus();
 }
 
 function closeModal(){
-document.getElementById("modal").style.display="none";
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
 }
 
-window.onclick=function(e){
-if(e.target.id==="modal"){
-closeModal();
-}
-}
+modalClose.addEventListener("click",closeModal);
+
+modal.addEventListener("click",function(event){
+    if(event.target === modal){
+        closeModal();
+    }
+});
+
+document.addEventListener("keydown",function(event){
+    if(event.key === "Escape" && modal.classList.contains("open")){
+        closeModal();
+    }
+});
+
+modalCallButton.addEventListener("click",function(){
+    window.location.href = "tel:+905550240880";
+});
+
+renderMenu();
 </script>
 
 </body>
